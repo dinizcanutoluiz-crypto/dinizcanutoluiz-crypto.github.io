@@ -1,6 +1,6 @@
 // FORJA X — service worker (modo offline quando hospedado como site/PWA).
 // No app nativo (Capacitor) os arquivos já ficam dentro do app e este arquivo não é usado.
-const CACHE = "forjax-v4.2-site";
+const CACHE = "forjax-v5.2-site";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (e) => {

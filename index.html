@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="author" content="Alex Almeida">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0812">
 <meta name="color-scheme" content="dark">
@@ -12,7 +13,7 @@
 <meta name="format-detection" content="telephone=no">
 <!-- ===== CONFIGURAÇÃO: edite só estas duas linhas ===== -->
 <script>
-  window.FX_CONTACT = "seuemail@exemplo.com";   // seu e-mail de contato (aparece na política de privacidade)
+  window.FX_CONTACT = "alequin601@gmail.com";   // seu e-mail de contato (aparece na política de privacidade)
   window.FX_USE_GAME_IMAGES = true;             // false = troca as fotos do jogo por desenhos próprios
 </script>
 <link rel="manifest" href="manifest.webmanifest">
@@ -24,7 +25,7 @@
 <style>
 :root{
   --bg:#0b0812; --panel:#140f1f; --panel2:#1b1429; --line:#2c2342;
-  --txt:#efeaf8; --mut:#9a90b3; --acc:#a855f7; --acc2:#d8b4fe; --pink:#ec4899; --accrgb:168,85,247; --acc3:#7c3aed;
+  --txt:#efeaf8; --mut:#9a90b3; --acc:#a855f7; --acc2:#d8b4fe; --pink:#ec4899; --accrgb:168,85,247; --acc3:#7c3aed; --c1:32,24,50; --c2:20,15,31;
   --good:#4ade80; --bad:#fb7185; --chip:#1f1830;
   --grad:linear-gradient(135deg,var(--acc) 0%,var(--acc3) 55%,var(--pink) 120%);
 }
@@ -181,7 +182,7 @@ body{background:
   radial-gradient(700px 500px at -10% 30%,rgba(var(--accrgb),.08),transparent 60%),
   radial-gradient(800px 600px at 50% 110%,rgba(124,58,237,.16),transparent 60%),
   var(--bg);background-attachment:fixed}
-.card,.sv,.preset{background:linear-gradient(180deg,rgba(32,24,50,.72),rgba(20,15,31,.82));border:1px solid rgba(var(--accrgb),.16);border-radius:14px;
+.card,.sv,.preset{background:linear-gradient(180deg,rgba(var(--c1),.72),rgba(var(--c2),.82));border:1px solid rgba(var(--accrgb),.16);border-radius:14px;
   box-shadow:0 10px 30px -18px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.04);backdrop-filter:blur(8px)}
 .sv{border-left:3px solid var(--acc)}
 .logo{border:0;background:var(--grad);border-radius:6px;box-shadow:0 0 22px rgba(var(--accrgb),.55)}
@@ -402,6 +403,91 @@ html.reduce .mini,html.reduce .wimg{animation:none}
 .btn.ok{background:linear-gradient(135deg,#16a34a,#22c55e)}.btn.ko{background:linear-gradient(135deg,#be123c,#fb7185)}
 .installcard{display:flex;gap:12px;align-items:center}
 .installcard .e{font-size:30px}
+/* ===== v5 sensi ===== */
+.sgrp{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.sgrp:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.sgrp summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font:700 13px "Chakra Petch",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--acc2);padding:4px 0}
+.sgrp summary::-webkit-details-marker{display:none}
+.sgrp summary::after{content:"＋";color:var(--mut)} .sgrp[open] summary::after{content:"－"}
+.srow{display:grid;grid-template-columns:1fr 112px 48px;gap:8px;align-items:center;padding:5px 0}
+.srow label{font-size:12.5px;color:#d9d2ea;line-height:1.2}
+.srow label small{display:block;font-size:10px;color:var(--mut)}
+.srow input[type=range]{padding:0;accent-color:var(--acc);min-height:0}
+.srow input[type=number]{padding:5px 6px;font:700 13px "Chakra Petch",system-ui,sans-serif;text-align:center;min-height:0}
+.srow.chg label{color:var(--acc2)}
+.pcard{position:relative;overflow:hidden;border-radius:16px;padding:14px;margin-bottom:10px;border:1px solid rgba(var(--accrgb),.22);background:linear-gradient(135deg,rgba(var(--accrgb),.16),rgba(20,15,31,.85));cursor:pointer;width:100%;text-align:left;color:var(--txt)}
+.pcard.on{box-shadow:inset 0 0 0 2px var(--acc)}
+.pcard b{display:block;font:700 17px "Chakra Petch",system-ui,sans-serif}
+.pcard i{font-style:normal;font-size:12px;color:var(--mut)}
+.pcard .e{position:absolute;right:12px;top:10px;font-size:28px;opacity:.9}
+.pcard .tags{margin-top:8px}
+.qopt{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 12px}
+.qopt .chip{flex:0 0 auto}
+.diag{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.diag button{text-align:left;padding:10px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--txt);font-size:12.5px;line-height:1.3;cursor:pointer;min-height:58px}
+.diag button b{display:block;font:700 12px "Chakra Petch",system-ui,sans-serif;color:var(--acc2);margin-bottom:2px;text-transform:uppercase;letter-spacing:.04em}
+.trainbox{position:relative;height:340px;border-radius:16px;overflow:hidden;background:radial-gradient(120% 90% at 50% 40%,#1d1530,#0b0812 70%);border:1px solid rgba(var(--accrgb),.3);touch-action:none;user-select:none;-webkit-user-select:none}
+.trainbox canvas{position:absolute;inset:0;width:100%;height:100%}
+.trainhud{position:absolute;left:10px;right:10px;top:8px;display:flex;justify-content:space-between;font:700 12px "Chakra Petch",system-ui,sans-serif;color:var(--acc2);pointer-events:none}
+.trainmsg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;pointer-events:none}
+.trainmsg b{display:block;font:700 20px "Chakra Petch",system-ui,sans-serif;margin-bottom:6px}
+/* ===== v5 layouts ===== */
+html.l-solid .card,html.l-solid .sv,html.l-solid .preset{background:rgb(var(--c2));backdrop-filter:none;box-shadow:none}
+html.l-outline .card,html.l-outline .sv,html.l-outline .preset{background:transparent;border:1.5px solid rgba(var(--accrgb),.45);box-shadow:none;backdrop-filter:none}
+html.l-sharp .card,html.l-sharp .sv,html.l-sharp .preset,html.l-sharp .btn,html.l-sharp .chip,html.l-sharp .wbtn,html.l-sharp .slot,html.l-sharp .opt,html.l-sharp input,html.l-sharp select,html.l-sharp textarea,html.l-sharp .kpi,html.l-sharp .pcard,html.l-sharp .qb,html.l-sharp .mapb,html.l-sharp .sres,html.l-sharp .segbig,html.l-sharp .segbig button,html.l-sharp nav button,html.l-sharp .sheet{border-radius:3px!important}
+html.l-dense .card,html.l-dense .sv,html.l-dense .preset{padding:10px;margin-bottom:8px}
+html.l-dense .wrap{padding:10px}
+html.l-dense body{font-size:14px}
+html.l-system *{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif!important;letter-spacing:normal!important}
+.lookrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0}
+.lookrow>span{font-size:13px}
+.lookprev{border-radius:14px;padding:12px;margin:10px 0}
+.moregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#v-more{display:none}
+.swatches{grid-template-columns:repeat(6,1fr)!important;row-gap:26px!important}
+/* ===== v5.1 celular ===== */
+.devhero{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,rgba(var(--accrgb),.28),rgba(var(--c2),.9))!important}
+.devhero .ph{width:58px;height:92px;border-radius:12px;border:3px solid var(--acc2);position:relative;flex:0 0 auto;box-shadow:0 0 24px rgba(var(--accrgb),.45)}
+.devhero .ph::after{content:"";position:absolute;left:50%;top:5px;width:16px;height:4px;border-radius:3px;background:var(--acc2);transform:translateX(-50%)}
+.devhero h2{margin:0;font:700 22px "Chakra Petch",system-ui,sans-serif;line-height:1.1}
+.devhero .sub{color:var(--mut);font-size:12.5px;margin-top:3px}
+.spec{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.spec:first-of-type{border-top:0}
+.spec .ic{font-size:20px;text-align:center}
+.spec span{font-size:13px;color:var(--mut)}
+.spec b{font:700 14px "Chakra Petch",system-ui,sans-serif;text-align:right;max-width:190px;overflow-wrap:anywhere}
+.meter{height:8px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;border-radius:6px;background:var(--grad);transition:width .5s}
+.score{font:700 54px "Chakra Petch",system-ui,sans-serif;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:13px;line-height:1.35;cursor:pointer;width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:var(--txt)}
+.chk:first-of-type{border-top:0}
+.chk .bx{width:22px;height:22px;border-radius:7px;border:2px solid rgba(var(--accrgb),.5);flex:0 0 auto;display:grid;place-items:center;font-size:13px;font-weight:800}
+.chk.ok .bx{background:var(--acc);border-color:var(--acc);color:#fff}
+.chk.warn .bx{border-color:#fbbf24;color:#fbbf24}
+.chk small{display:block;color:var(--mut);font-size:11.5px;margin-top:2px}
+.playbtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;border-radius:16px;border:0;background:var(--grad);color:#fff;font:700 18px "Chakra Petch",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 10px 30px rgba(var(--accrgb),.4);cursor:pointer;margin-top:12px}
+.boostov{position:fixed;inset:0;z-index:60;background:rgba(5,3,10,.92);display:grid;place-items:center;text-align:center;padding:24px}
+.boostov .ring{width:130px;height:130px;border-radius:50%;border:6px solid rgba(var(--accrgb),.2);border-top-color:var(--acc);animation:spin 1s linear infinite;margin:0 auto 18px}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ===== v5.2 pro ===== */
+.splby{font:600 11px Inter,system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.profcard{display:flex;gap:12px;align-items:center}
+.avatar{width:54px;height:54px;border-radius:16px;background:var(--grad);display:grid;place-items:center;font:700 20px "Chakra Petch",system-ui,sans-serif;color:#fff;flex:0 0 auto;box-shadow:0 6px 20px rgba(var(--accrgb),.35)}
+.avatar.big{width:84px;height:84px;border-radius:24px;font-size:32px;margin:0 auto 10px}
+.profcard h3{margin:0;font:700 18px "Chakra Petch",system-ui,sans-serif}
+.profcard .id{font-size:12px;color:var(--mut);cursor:pointer}
+.credit{display:block;width:100%;background:none;border:0;color:var(--mut);font-size:12px;text-align:center;padding:18px 0 6px;cursor:pointer;letter-spacing:.02em}
+.credit b{color:var(--acc2)}
+.creator{text-align:center;padding:6px 0 4px}
+.creator h3{margin:0;display:block!important;text-align:center;font:700 24px "Chakra Petch",system-ui,sans-serif}
+.creator .role{color:var(--mut);font-size:13px;margin-top:2px}
+.creator a.mail{display:inline-block;margin-top:8px;color:var(--acc2);font-weight:700;text-decoration:none;font-size:14px}
+.abgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.abgrid button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--txt);cursor:pointer;font-size:12px;line-height:1.3}
+.abgrid button b{font:700 14px "Chakra Petch",system-ui,sans-serif}
+.abgrid button .e{font-size:22px}
+.sc::after{content:"FORJA X · criado por Alex Almeida";display:block;margin-top:14px;font:600 10px Inter,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:center}
+.netbar{position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:58;padding:7px 14px;border-radius:20px;font:700 12px Inter,system-ui,sans-serif;background:#3b1d1d;color:#fecaca;border:1px solid rgba(251,113,133,.4);box-shadow:0 6px 20px rgba(0,0,0,.4)}
 /* ===== fotos ===== */
 .wimg,.photo img,.mini,.tpimg,.svimg,.scimg,.sqs img,.reel img{-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 55%,transparent 100%)}
 .wimg{display:block;width:100%;height:46px;object-fit:contain;margin:4px 0 6px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
@@ -471,7 +557,7 @@ html.reduce .mini,html.reduce .wimg{animation:none}
 <div class="wrap">
   <header>
     <div class="logo" id="logoBtn" role="button" tabindex="0" aria-label="Início" style="cursor:pointer"><span>FX</span></div>
-    <div style="flex:1"><h1>FORJA X <span class="v2">V4.2</span></h1><small>Extração · Zona de Risco · Delta Force Mobile</small></div>
+    <div style="flex:1"><h1>FORJA X <span class="v2">V5.2</span></h1><small>Extração · Zona de Risco · Delta Force Mobile</small></div>
     <button class="hbtn" id="searchBtn" aria-label="Buscar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
     <button class="hbtn" id="menuBtn" aria-label="Menu e configurações"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </header>
@@ -479,8 +565,11 @@ html.reduce .mini,html.reduce .wimg{animation:none}
   <!-- MONTAR -->
   <section id="v-home" class="hide">
     <div class="hello" id="hello"></div>
+    <div class="card profcard" id="hProf"></div>
     <div class="card hcard" id="hDaily"></div>
     <div class="card hide" id="hLive"></div>
+    <div class="card" id="hDev"></div>
+    <div class="card" id="hSens"></div>
     <div class="card" id="hRaid"></div>
     <div class="card hcard" id="hCont"></div>
     <div class="card"><div class="label">Atalhos</div><div class="quick" id="hQuick"></div></div>
@@ -488,6 +577,7 @@ html.reduce .mini,html.reduce .wimg{animation:none}
     <div class="card" id="hCode"></div>
     <div class="card" id="hStats"></div>
     <div class="card tip" id="hTip"></div>
+    <button class="credit" id="hCredit"></button>
   </section>
 
   <section id="v-build" class="hide">
@@ -583,8 +673,30 @@ html.reduce .mini,html.reduce .wimg{animation:none}
         <button class="btn ghost" id="toShot">Card p/ print</button>
       </div>
     </div>
-    <div class="foot-v">FORJA X v4.2 · base de dados de 22/11/2026 · <span id="realCount"></span> armas com atributos reais do Armeiro</div>
+    <div class="foot-v">FORJA X v5.2 · base de dados de 22/11/2026 · <span id="realCount"></span> armas com atributos reais do Armeiro</div>
     <p class="note">Os números de status são estimativas para comparar builds dentro do app, não os valores oficiais do jogo. Os nomes de acessórios seguem os do jogo quando conhecidos; confira no armeiro antes de fechar a build.</p>
+  </section>
+
+  <!-- SENSI -->
+  <section id="v-sensi" class="hide">
+    <div class="segbig seg3" id="sensSeg" role="tablist"><button class="on" data-p="presets">Perfis</button><button data-p="gen">Gerar</button><button data-p="train">Treino</button></div>
+    <div id="sensPresets"></div>
+    <div id="sensGen" class="hide"></div>
+    <div id="sensTrain" class="hide"></div>
+    <div class="card" id="sensEditor"></div>
+    <div class="card" id="sensDiag"></div>
+    <div class="label" style="margin:16px 4px 8px">Minhas sensis <span style="letter-spacing:0;text-transform:none">por aluno ou aparelho</span></div>
+    <div id="sensList"></div>
+    <p class="note" style="margin:12px 4px">Nomes e base de valores vêm do guia de configurações do Delta Force do gamingonphone.com. Os demais perfis e o gerador são ajustes da FORJA X em cima dessa base: use como ponto de partida e ajuste no Modo de Treinamento do jogo.</p>
+  </section>
+
+  <!-- MEU CELULAR -->
+  <section id="v-device" class="hide">
+    <div class="card devhero" id="devHero"></div>
+    <div class="card" id="devSpecs"></div>
+    <div class="card" id="devBench"></div>
+    <div class="card" id="devBoost"></div>
+    <p class="note" style="margin:12px 4px">Por segurança, o navegador não deixa nenhum site ou app web ler a temperatura em graus, fechar outros apps ou limpar a RAM do celular. O FORJA X mostra tudo o que o aparelho libera, mede o desempenho e o aquecimento com testes próprios e prepara o jogo do jeito que é possível.</p>
   </section>
 
   <!-- INCURSÃO -->
@@ -747,11 +859,11 @@ html.reduce .mini,html.reduce .wimg{animation:none}
 <nav aria-label="Navegação principal">
   <button class="on" data-v="home"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>Início</button>
   <button data-v="build"><svg viewBox="0 0 24 24"><path d="M4 20l6-6M14 4l6 6-8 8-6-6z"/><path d="M13 7l4 4"/></svg>Montar</button>
+  <button data-v="sensi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>Sensi</button>
   <button data-v="raid"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>Incursão</button>
-  <button data-v="ammo"><svg viewBox="0 0 24 24"><path d="M8 21V9l2-5 2 5v12zM14 21V9l2-5 2 5v12z"/><path d="M8 15h4M14 15h4"/></svg>Munição</button>
   <button data-v="meta"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M11 16V5M16 16v-5"/></svg>Meta</button>
-  <button data-v="codes"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10l-2 2 2 2M16 10l2 2-2 2M13 9l-2 6"/></svg>Códigos</button>
   <button data-v="saved"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></svg>Salvos <span id="cnt"></span></button>
+  <button data-v="more"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>Mais</button>
 </nav>
 
 <div class="sheet-bg" id="sbg"></div>
@@ -759,13 +871,20 @@ html.reduce .mini,html.reduce .wimg{animation:none}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="snack" id="snack" role="status" aria-live="polite"><span id="snackT"></span><button id="snackU">Desfazer</button></div>
 <button class="totop" id="totop" aria-label="Voltar ao topo">↑</button>
-<div class="splash" id="splash"><div class="logo" style="width:64px;height:64px"><span style="font-size:20px">FX</span></div><b>FORJA X</b></div>
+<div class="splash" id="splash"><div class="logo" style="width:64px;height:64px"><span style="font-size:20px">FX</span></div><b>FORJA X</b><small class="splby">por Alex Almeida</small></div>
 <div id="welcome" class="welcome hide"><div class="box">
-  <div style="display:flex;align-items:center;gap:10px"><div class="logo" style="transform:none;width:44px;height:44px;border-radius:12px"><span style="transform:none">FX</span></div><span class="v2" style="font-size:12px">V4.0</span></div>
+  <div style="display:flex;align-items:center;gap:10px"><div class="logo" style="transform:none;width:44px;height:44px;border-radius:12px"><span style="transform:none">FX</span></div><span class="v2" style="font-size:12px">V5.2</span></div>
   <button class="wclose" id="wX" aria-label="Fechar">✕</button>
   <h2>Bem-vindo à FORJA X</h2>
   <p class="note" style="font-size:13px">Agora focado no modo extração: Zona de Risco.</p>
   <ul>
+    <li><b>👤</b><span><b>Seu perfil:</b> nick, ID, patente e função. Ligou o <b>modo treinador</b>? Suas sensis saem com seu nome pros alunos.</span></li>
+    <li><b>💾</b><span><b>Backup completo:</b> salve tudo em arquivo e passe pro celular novo.</span></li>
+    <li><b>✉️</b><span><b>Fale com o criador:</b> Alex Almeida · alequin601@gmail.com, direto pelo app.</span></li>
+    <li><b>📱</b><span><b>Meu celular:</b> veja CPU, GPU, RAM e tela, faça o teste de desempenho e aquecimento e use <b>Otimizar e jogar</b> pra conferir tudo e abrir o Delta Force.</span></li>
+    <li><b>🎯</b><span><b>Sensi nova:</b> 7 perfis prontos, gerador pela sua tela e estilo, editor com todos os campos do jogo, diagnóstico de mira e treino que diz se sua sensi está alta ou baixa.</span></li>
+    <li><b>👨‍🏫</b><span><b>Pra treinador:</b> salve a sensi de cada aluno e mande no WhatsApp ou em card pra print.</span></li>
+    <li><b>🎨</b><span><b>12 temas</b> e estilos de layout: cards de vidro, sólidos ou contorno, cantos retos, modo compacto.</span></li>
     <li><b>🔴</b><span><b>Incursão ao vivo:</b> cronômetro da partida com aviso de extração e registro de Extraí/Morri em 1 toque. Mostra seu lucro por hora.</span></li>
     <li><b>🗺️</b><span><b>Planejar incursão:</b> escolha o mapa e veja se seu kit está caro demais, o que falta e o lucro esperado.</span></li>
     <li><b>📒</b><span><b>Diário de incursões:</b> anote extrações e mortes e acompanhe seu lucro real e taxa de extração.</span></li>
@@ -1431,18 +1550,56 @@ function openShot(l){
 
 // ---------- TEMAS ----------
 const THEMES={
- roxo:{n:"Roxo",acc:"#a855f7",acc2:"#d8b4fe",acc3:"#7c3aed",pink:"#ec4899",rgb:"168,85,247"},
- neon:{n:"Neon",acc:"#ec4899",acc2:"#f9a8d4",acc3:"#db2777",pink:"#f97316",rgb:"236,72,153"},
- ciano:{n:"Ciano",acc:"#06b6d4",acc2:"#a5f3fc",acc3:"#0891b2",pink:"#6366f1",rgb:"6,182,212"},
- verde:{n:"Tóxico",acc:"#22c55e",acc2:"#bbf7d0",acc3:"#16a34a",pink:"#06b6d4",rgb:"34,197,94"},
- ouro:{n:"Ouro",acc:"#f59e0b",acc2:"#fde68a",acc3:"#d97706",pink:"#ef4444",rgb:"245,158,11"},
+ roxo:{n:"Roxo",acc:"#a855f7",acc2:"#d8b4fe",acc3:"#7c3aed",pink:"#ec4899",rgb:"168,85,247",bg:"#0b0812",c1:"32,24,50",c2:"20,15,31"},
+ neon:{n:"Neon",acc:"#ec4899",acc2:"#f9a8d4",acc3:"#db2777",pink:"#f97316",rgb:"236,72,153",bg:"#0f0710",c1:"46,20,40",c2:"26,12,24"},
+ ciano:{n:"Ciano",acc:"#06b6d4",acc2:"#a5f3fc",acc3:"#0891b2",pink:"#6366f1",rgb:"6,182,212",bg:"#060c12",c1:"16,34,46",c2:"10,20,30"},
+ verde:{n:"Tóxico",acc:"#22c55e",acc2:"#bbf7d0",acc3:"#16a34a",pink:"#06b6d4",rgb:"34,197,94",bg:"#060d09",c1:"16,38,26",c2:"10,22,16"},
+ ouro:{n:"Ouro",acc:"#f59e0b",acc2:"#fde68a",acc3:"#d97706",pink:"#ef4444",rgb:"245,158,11",bg:"#0e0b06",c1:"42,32,14",c2:"24,18,9"},
+ sangue:{n:"Sangue",acc:"#ef4444",acc2:"#fecaca",acc3:"#b91c1c",pink:"#f97316",rgb:"239,68,68",bg:"#100607",c1:"46,16,18",c2:"26,10,11"},
+ artico:{n:"Ártico",acc:"#38bdf8",acc2:"#e0f2fe",acc3:"#0284c7",pink:"#a78bfa",rgb:"56,189,248",bg:"#070b12",c1:"20,32,52",c2:"12,19,31"},
+ tatico:{n:"Tático",acc:"#f97316",acc2:"#fed7aa",acc3:"#c2410c",pink:"#facc15",rgb:"249,115,22",bg:"#0d0905",c1:"40,26,14",c2:"23,15,9"},
+ camuflado:{n:"Camuflado",acc:"#84cc16",acc2:"#d9f99d",acc3:"#4d7c0f",pink:"#ca8a04",rgb:"132,204,22",bg:"#0a0c06",c1:"30,36,18",c2:"18,22,11"},
+ aurora:{n:"Aurora",acc:"#2dd4bf",acc2:"#ccfbf1",acc3:"#0d9488",pink:"#a855f7",rgb:"45,212,191",bg:"#061010",c1:"14,40,40",c2:"9,24,24"},
+ chiclete:{n:"Chiclete",acc:"#f472b6",acc2:"#fce7f3",acc3:"#c026d3",pink:"#60a5fa",rgb:"244,114,182",bg:"#100812",c1:"44,22,44",c2:"25,13,26"},
+ grafite:{n:"Grafite",acc:"#d4d4d8",acc2:"#fafafa",acc3:"#71717a",pink:"#a1a1aa",rgb:"212,212,216",bg:"#09090b",c1:"34,34,38",c2:"20,20,23"},
 };
 const TH_KEY="fx-theme";
 function applyTheme(k){const t=THEMES[k]||THEMES.roxo;const s=document.documentElement.style;
-  s.setProperty("--acc",t.acc);s.setProperty("--acc2",t.acc2);s.setProperty("--acc3",t.acc3);s.setProperty("--pink",t.pink);s.setProperty("--accrgb",t.rgb);
+  s.setProperty("--acc",t.acc);s.setProperty("--acc2",t.acc2);s.setProperty("--acc3",t.acc3);s.setProperty("--pink",t.pink);s.setProperty("--accrgb",t.rgb);s.setProperty("--bg",t.bg);s.setProperty("--c1",t.c1);s.setProperty("--c2",t.c2);
+  try{document.querySelector('meta[name="theme-color"]').content=t.bg}catch(e){}
   _acc=t.acc;lsSet(TH_KEY,k);document.querySelectorAll(".sw").forEach(x=>x.classList.toggle("on",x.dataset.t===k));
   if(typeof renderStats==="function"&&st.w){renderStats();renderTTK();renderCost()}}
 function swatchesHTML(){const cur=lsGet(TH_KEY,"roxo");return Object.entries(THEMES).map(([k,t])=>`<button class="sw ${k===cur?'on':''}" data-t="${k}" style="background:linear-gradient(135deg,${t.acc},${t.acc3} 60%,${t.pink})"><span>${t.n}</span></button>`).join("")}
+
+// ---------- APARÊNCIA ----------
+const LOOK_KEY="fx-look";
+const LOOK_DEF={cards:"glass",corners:"round",density:"comfy",font:"brand"};
+function applyLook(l){l={...LOOK_DEF,...l};const c=document.documentElement.classList;
+  c.toggle("l-solid",l.cards==="solid");c.toggle("l-outline",l.cards==="outline");c.toggle("l-sharp",l.corners==="sharp");c.toggle("l-dense",l.density==="dense");c.toggle("l-system",l.font==="system");lsSet(LOOK_KEY,l)}
+function openLook(){
+  const l={...LOOK_DEF,...lsGet(LOOK_KEY,{})};
+  const seg=(k,opts)=>`<div class="seg" data-lk="${k}">${opts.map(([v,n])=>`<button class="${l[k]===v?'on':''}" data-lv="${v}">${n}</button>`).join("")}</div>`;
+  showSheet("Aparência",`<div class="label">Cor do tema</div><div class="swatches" style="margin-bottom:28px">${swatchesHTML()}</div>
+    <div class="lookrow"><span>Estilo dos cards</span>${seg("cards",[["glass","Vidro"],["solid","Sólido"],["outline","Contorno"]])}</div>
+    <div class="lookrow"><span>Cantos</span>${seg("corners",[["round","Redondos"],["sharp","Retos"]])}</div>
+    <div class="lookrow"><span>Densidade</span>${seg("density",[["comfy","Confortável"],["dense","Compacta"]])}</div>
+    <div class="lookrow"><span>Fonte</span>${seg("font",[["brand","Tática"],["system","Sistema"]])}</div>
+    <div class="card lookprev"><div class="label">Prévia</div><b style="font:700 18px 'Chakra Petch',system-ui,sans-serif">FORJA X</b><p class="note" style="margin:4px 0 10px">Assim ficam os cards do app.</p><div class="btns"><button class="btn sm">Botão</button><button class="chip on">Chip</button></div></div>
+    <button class="btn ghost sm" id="lkReset" style="width:100%">Voltar ao padrão</button>`);
+  $("#shBody").onclick=e=>{const sw=e.target.closest(".sw");if(sw){applyTheme(sw.dataset.t);return}
+    const b=e.target.closest("[data-lv]");if(b){const k=b.closest("[data-lk]").dataset.lk;const cur={...LOOK_DEF,...lsGet(LOOK_KEY,{})};cur[k]=b.dataset.lv;applyLook(cur);b.parentElement.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));buzz();return}
+    if(e.target.closest("#lkReset")){applyLook(LOOK_DEF);applyTheme("roxo");closeSheet();openLook()}};
+}
+function openMore(){
+  const items=[["📱","Meu celular","device"],["🚀","Otimizar e jogar","boost"],["🔫","Munição","ammo"],["📋","Códigos","codes"],["💰","Preços","price"],["⚔️","Comparar","cmp"],["👥","Esquadrão","squad"],["🎲","Roleta","roleta"],["🔎","Buscar","buscar"],["🎨","Aparência","look"],["👤","Meu perfil","perfil"],["💾","Backup","backup"],["ℹ️","Sobre e contato","about"],["⚙️","Menu","menu"]];
+  showSheet("Mais",`<div class="moregrid">${items.map(([e,n,k])=>`<button class="qb" data-mo="${k}"><span class="e">${e}</span>${n}</button>`).join("")}</div>`);
+  $("#shBody").onclick=e=>{const b=e.target.closest("[data-mo]");if(!b)return;const k=b.dataset.mo;closeSheet();
+    if(k==="look")openLook();else if(k==="perfil")openProfile();else if(k==="backup")openBackup();else if(k==="about")openAbout();else if(k==="menu")openMenu();else if(k==="buscar")openSearch();
+    else if(k==="roleta"){go("build");setTimeout(openRoulette,150)}
+    else if(k==="boost"){go("device");setTimeout(()=>$("#devBoost")?.scrollIntoView({behavior:"smooth"}),400)}
+    else if(k==="squad"){go("saved");setTimeout(()=>$("#savedSeg [data-p=squad]").click(),50)}
+    else go(k)};
+}
 
 // ---------- ANÁLISE DA BUILD ----------
 function grade(sc){return sc>=72?"S":sc>=62?"A":sc>=52?"B":sc>=42?"C":"D"}
@@ -1600,8 +1757,87 @@ function openLegal(k){
 }
 
 // ---------- MENU / CONFIGURAÇÕES ----------
-const FX_CONTACT=window.FX_CONTACT||"seuemail@exemplo.com";
-const CHANGELOG=[["4.2","Corrige a rolagem da tela travada. Novo modo Incursão Ao vivo: cronômetro com aviso de extração, registro rápido de Extraí/Morri e lucro por hora. Botão Instalar app."],["4.1","Pronto pra loja: modo offline, botão voltar do Android, política de privacidade e termos de uso, aviso de app não oficial, ícone, tela de abertura nativa e ajustes de toque."],["4.0","Foco no modo extração: planejador de incursão por mapa com risco e lucro esperado, diário de incursões, munições reais por calibre com tabela de penetração, tier list completa da Zona de Risco (S a D) e Zona de Risco como modo padrão."],["3.2","Otimização: cálculos em cache, imagens sob demanda, busca sem travar e renderização mais leve. Desfazer ao excluir, proteção contra dados corrompidos, tela de abertura, botão voltar ao topo, exportar em texto e atalhos de teclado."],["3.1","Tela de Início com desafio do dia, continuar montagem, meta agora, código mais copiado, atalhos, estatísticas do seu arsenal e dica do dia. Vibração ao tocar no Android."],["3.0","Builds oficiais com os nomes reais do Armeiro, 36 códigos com contagem de cópias, nomes de modo do jogo (Conquista/Zona de Risco), tier list por modo, dupla recomendada e 19 acessórios reais novos."],["2.2","Esquadrão de 4 com cobertura de distância, roleta de loadout, desafio do dia e perfil por distância."],["2.1","Busca global, ficha da arma, ordenação e filtros, configurações, botão voltar do celular e acessibilidade."],
+const FX_CONTACT=window.FX_CONTACT||"alequin601@gmail.com";
+const FX_CREATOR="Alex Almeida", FX_VER="5.2";
+// ---------- PERFIL ----------
+const PF_KEY="fx-profile";
+const ROLES=[["assalto","Assalto"],["suporte","Suporte"],["engenheiro","Engenheiro"],["recon","Reconhecimento"]];
+function prof(){return lsGet(PF_KEY,{})}
+function initials(s){return (s||"").trim().split(/\s+/).slice(0,2).map(x=>x[0]||"").join("").toUpperCase()||"FX"}
+function openProfile(){
+  const p=prof();
+  showSheet("Meu perfil",`<div class="avatar big" id="pfAv">${esc(initials(p.nick))}</div>
+    <div class="fl"><label>Nick no jogo</label><input id="pfNick" maxlength="24" value="${esc(p.nick||"")}" placeholder="Ex: AlexDF"></div>
+    <div class="fl"><label>ID do jogador (opcional)</label><input id="pfId" maxlength="20" inputmode="numeric" value="${esc(p.id||"")}" placeholder="Pra amigos te adicionarem"></div>
+    <div class="fl"><label>Patente / rank (opcional)</label><input id="pfRank" maxlength="24" value="${esc(p.rank||"")}" placeholder="Ex: Diamante"></div>
+    <label class="note">Função favorita</label><div class="qopt">${ROLES.map(([k,n])=>`<button class="chip ${p.role===k?'on':''}" data-pr="${k}">${n}</button>`).join("")}</div>
+    <div class="setrow"><div>Sou treinador<small>Suas sensis e cards saem com "por ${esc(p.nick||"você")}" pros alunos</small></div><button class="switch ${p.coach?'on':''}" id="pfCoach" role="switch" aria-checked="${!!p.coach}" aria-label="Sou treinador"></button></div>
+    <button class="btn" id="pfSave" style="width:100%;margin-top:12px">Salvar perfil</button>
+    <p class="note" style="margin-top:8px">Fica salvo só neste aparelho.</p>`);
+  let role=p.role||"",coach=!!p.coach;
+  $("#shBody").oninput=e=>{if(e.target.id==="pfNick")$("#pfAv").textContent=initials(e.target.value)};
+  $("#shBody").onclick=e=>{const r=e.target.closest("[data-pr]");if(r){role=role===r.dataset.pr?"":r.dataset.pr;r.parentElement.querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x.dataset.pr===role));return}
+    const c=e.target.closest("#pfCoach");if(c){coach=!coach;c.classList.toggle("on",coach);c.setAttribute("aria-checked",coach);return}
+    if(e.target.closest("#pfSave")){lsSet(PF_KEY,{nick:$("#pfNick").value.trim(),id:$("#pfId").value.trim(),rank:$("#pfRank").value.trim(),role,coach});closeSheet();toast("Perfil salvo");if(curView==="home")renderHome();buzz(15)}};
+}
+function renderProfCard(){
+  const p=prof(),el=$("#hProf");if(!el)return;
+  if(!p.nick){el.innerHTML=`<div class="avatar">FX</div><div style="flex:1"><h3>Crie seu perfil</h3><div class="note">Nick, ID e função: aparece nos seus cards e sensis</div></div><button class="btn sm" data-q="perfil">Criar</button>`;return}
+  const role=(ROLES.find(r=>r[0]===p.role)||[])[1];
+  el.innerHTML=`<div class="avatar">${esc(initials(p.nick))}</div><div style="flex:1;min-width:0"><h3>${esc(p.nick)}</h3>${p.id?`<div class="id" data-q="copyid">ID ${esc(p.id)} · toque pra copiar</div>`:""}<div style="margin-top:4px">${p.rank?`<span class="tag">${esc(p.rank)}</span>`:""}${role?`<span class="tag">${role}</span>`:""}${p.coach?'<span class="offb">Treinador</span>':""}</div></div><button class="btn ghost sm" data-q="perfil">Editar</button>`;
+}
+function byLine(){const p=prof();return p.coach&&p.nick?`Sensi passada por ${p.nick} (treinador)`:p.nick?`Por ${p.nick}`:""}
+// ---------- SOBRE / CONTATO ----------
+function mailto(subject,body){return `mailto:${FX_CONTACT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body||"")}`}
+function bugBody(){const d=dev||{};return `\n\n———\nFORJA X v${FX_VER}\nAparelho: ${d.model?devName(d):"?"} · ${d.os||""} ${d.osv||""}\nTela: ${innerWidth}×${innerHeight} @${devicePixelRatio}x\nNavegador: ${navigator.userAgent}\nAba: ${curView}`}
+function openMail(subject,body){const a=document.createElement("a");a.href=mailto(subject,body);a.target="_top";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}
+function appLink(){return /^https?:/.test(location.href)&&!/claude\.ai|claudeusercontent/.test(location.host)?location.origin+location.pathname:"https://dinizcanutoluiz-crypto.github.io/"}
+function openAbout(){
+  if(!dev)readDevice().then(d=>dev=d).catch(()=>{});
+  showSheet("Sobre o FORJA X",`<div class="creator"><div class="avatar big">AA</div><h3>${FX_CREATOR}</h3><div class="role">Criador e desenvolvedor do FORJA X</div><a class="mail" href="${mailto("FORJA X")}" target="_top">✉️ ${FX_CONTACT}</a></div>
+    <div class="abgrid">
+      <button data-ab="mail"><span class="e">💬</span><b>Falar comigo</b>Dúvidas, parcerias e aulas</button>
+      <button data-ab="bug"><span class="e">🐞</span><b>Reportar erro</b>Já vai com os dados do aparelho</button>
+      <button data-ab="idea"><span class="e">💡</span><b>Sugerir ideia</b>O que falta no app?</button>
+      <button data-ab="share"><span class="e">📤</span><b>Compartilhar</b>Mande o app pros amigos</button>
+      <button data-ab="copy"><span class="e">📋</span><b>Copiar e-mail</b>${FX_CONTACT}</button>
+      <button data-ab="news"><span class="e">✨</span><b>Novidades</b>O que mudou na v${FX_VER}</button>
+    </div>
+    <div class="setrow" style="margin-top:14px"><div>Versão<small>FORJA X v${FX_VER} · ${LEGAL_DATE}</small></div><div><small>${W.length} armas · ${typeof CODES!=="undefined"?CODES.length+" códigos":""}</small></div></div>
+    <p class="note" style="margin-top:10px">FORJA X é um projeto independente de ${FX_CREATOR}, feito por fã pra fã. Sem afiliação com a Garena nem com os desenvolvedores do Delta Force.</p>`);
+  $("#shBody").onclick=async e=>{const b=e.target.closest("[data-ab]");if(!b)return;const k=b.dataset.ab;
+    if(k==="mail")openMail("FORJA X: contato","Olá, Alex!\n\n");
+    if(k==="bug")openMail(`FORJA X v${FX_VER}: erro`,"O que aconteceu:\n\nO que eu estava fazendo:\n"+bugBody());
+    if(k==="idea")openMail("FORJA X: sugestão","Minha ideia pro app:\n\n");
+    if(k==="copy")copy(FX_CONTACT,b);
+    if(k==="news"){closeSheet();openWelcome()}
+    if(k==="share"){const txt=`🎯 FORJA X: montador de loadouts, sensi e incursões pro Delta Force Mobile. Criado por ${FX_CREATOR}.`,url=appLink();
+      try{if(navigator.share){await navigator.share({title:"FORJA X",text:txt,url});return}}catch(err){if(err.name==="AbortError")return}
+      copy(txt+"\n"+url,b)}};
+}
+// ---------- BACKUP COMPLETO ----------
+function allData(){const o={};try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(/^(fx-|arsdf-)/.test(k))o[k]=localStorage.getItem(k)}}catch(e){}return o}
+function fullBackupCode(){return "FXALL-"+btoa(unescape(encodeURIComponent(JSON.stringify({app:"FORJA X",v:FX_VER,t:Date.now(),d:allData()}))))}
+function restoreAll(obj){if(!obj||!obj.d)throw 0;let n=0;for(const [k,v] of Object.entries(obj.d)){if(/^(fx-|arsdf-)/.test(k)){localStorage.setItem(k,v);n++}}return n}
+function downloadBackup(){const blob=new Blob([JSON.stringify({app:"FORJA X",v:FX_VER,t:Date.now(),d:allData()},null,1)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`forjax-backup-${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);toast("Backup baixado")}
+function openBackup(){
+  const n=Object.keys(allData()).length;
+  showSheet("Backup completo",`<p class="note">Salva <b>tudo</b>: loadouts, sensis dos alunos, perfil, diário, esquadrões, preços, temas e testes (${n} itens). Use pra trocar de celular ou não perder nada.</p>
+    <div class="btns" style="margin-top:12px"><button class="btn" id="bkFile">💾 Baixar arquivo</button><button class="btn ghost" id="bkCode">📋 Copiar código</button></div>
+    <div class="label" style="margin-top:16px">Restaurar</div>
+    <div class="btns"><button class="btn ghost" id="bkOpen">📂 Abrir arquivo</button></div><input type="file" id="bkIn" accept=".json,application/json" hidden>
+    <textarea id="bkTxt" rows="3" placeholder="…ou cole aqui o código FXALL-" style="margin-top:8px"></textarea>
+    <button class="btn ghost" id="bkPaste" style="width:100%;margin-top:8px">Restaurar pelo código</button>
+    <p class="note" style="margin-top:8px">Restaurar substitui os dados atuais pelos do backup.</p>`);
+  const done=k=>{toast(`Backup restaurado (${k} itens). Recarregando…`);setTimeout(()=>location.reload(),900)};
+  $("#shBody").onclick=e=>{const t=e.target.closest("button");if(!t)return;
+    if(t.id==="bkFile")downloadBackup();
+    if(t.id==="bkCode")copy(fullBackupCode(),t);
+    if(t.id==="bkOpen")$("#bkIn").click();
+    if(t.id==="bkPaste"){try{const s=$("#bkTxt").value.trim().replace(/^FXALL-/,"");done(restoreAll(JSON.parse(decodeURIComponent(escape(atob(s))))))}catch(err){toast("Código inválido")}}};
+  $("#bkIn").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{done(restoreAll(JSON.parse(r.result)))}catch(err){toast("Arquivo inválido")}};r.readAsText(f)};
+}
+const CHANGELOG=[["5.2","Versão Pro: créditos e contato do criador Alex Almeida, tela Sobre com falar comigo, reportar erro (já com os dados do aparelho), sugerir ideia e compartilhar. Perfil do jogador com nick, ID, patente, função e modo treinador. Backup completo em arquivo ou código. Aviso de sem internet."],["5.1","Meu celular: marca, modelo, CPU, GPU, RAM, tela, bateria e internet, teste de desempenho com nota e gráfico ideal pro Delta Force, teste de aquecimento e o botão Otimizar e jogar, que confere o aparelho e abre o jogo."],["5.0","Mega atualização: aba Sensi com 7 perfis, gerador por tela/FPS/estilo, editor completo com todos os campos do jogo, diagnóstico rápido, treino de mira e sensis salvas por aluno (WhatsApp, código e card). 12 temas de cor e estilos de layout (cards, cantos, densidade e fonte). Nova barra com botão Mais."],["4.2","Corrige a rolagem da tela travada. Novo modo Incursão Ao vivo: cronômetro com aviso de extração, registro rápido de Extraí/Morri e lucro por hora. Botão Instalar app."],["4.1","Pronto pra loja: modo offline, botão voltar do Android, política de privacidade e termos de uso, aviso de app não oficial, ícone, tela de abertura nativa e ajustes de toque."],["4.0","Foco no modo extração: planejador de incursão por mapa com risco e lucro esperado, diário de incursões, munições reais por calibre com tabela de penetração, tier list completa da Zona de Risco (S a D) e Zona de Risco como modo padrão."],["3.2","Otimização: cálculos em cache, imagens sob demanda, busca sem travar e renderização mais leve. Desfazer ao excluir, proteção contra dados corrompidos, tela de abertura, botão voltar ao topo, exportar em texto e atalhos de teclado."],["3.1","Tela de Início com desafio do dia, continuar montagem, meta agora, código mais copiado, atalhos, estatísticas do seu arsenal e dica do dia. Vibração ao tocar no Android."],["3.0","Builds oficiais com os nomes reais do Armeiro, 36 códigos com contagem de cópias, nomes de modo do jogo (Conquista/Zona de Risco), tier list por modo, dupla recomendada e 19 acessórios reais novos."],["2.2","Esquadrão de 4 com cobertura de distância, roleta de loadout, desafio do dia e perfil por distância."],["2.1","Busca global, ficha da arma, ordenação e filtros, configurações, botão voltar do celular e acessibilidade."],
  ["2.0","Nome FORJA X, análise da build, duelo de TTK, temas de cor e navegação com ícones."],
  ["1.7","Fotos reais das 69 armas e atributos do Armeiro."],["1.6","Equipamento de Operações, card pra print, favoritas e salvamento automático."],
  ["1.5","Preços em Tekniq Alloy, ranking e otimizador de orçamento."],["1.4","Calculadora de TTK, leitor de código do jogo, desfazer e backup."],
@@ -1610,11 +1846,11 @@ function openMenu(){
   const reduce=lsGet("fx-reduce",false);
   showSheet("Menu",`
     <div class="label">Aparência</div>
-    <div class="swatches" style="margin-bottom:26px">${swatchesHTML()}</div>
+    <button class="btn ghost sm" id="mLook" style="width:100%;margin-bottom:8px">🎨 Temas, cards, cantos e fonte</button>
     <div class="setrow"><div>Reduzir animações<small>Deixa o app mais leve em celular fraco</small></div><button class="switch ${reduce?'on':''}" id="swReduce" role="switch" aria-checked="${reduce}" aria-label="Reduzir animações"></button></div>
     <div class="label" style="margin-top:16px">Seus dados</div>
     <div class="setrow"><div>${load().length} loadouts · ${favWs().length} favoritas<small>Tudo fica salvo só neste aparelho</small></div></div>
-    <div class="btns" style="margin-top:10px"><button class="btn sm" id="mBackup">Copiar backup</button><button class="btn ghost sm" id="mRestore">Restaurar backup</button></div>
+    <div class="btns" style="margin-top:10px"><button class="btn sm" id="mFull">💾 Backup completo</button><button class="btn ghost sm" id="mBackup">Copiar backup dos loadouts</button><button class="btn ghost sm" id="mRestore">Restaurar backup</button></div>
     <div class="btns" style="margin-top:8px"><button class="btn ghost sm" id="mClearRec">Limpar recentes</button><button class="btn ghost sm" id="mResetPrices">Preços padrão</button></div>
     <div class="btns" style="margin-top:8px"><button class="btn ghost sm" id="mWipe" style="color:var(--bad)">Apagar todos os loadouts</button></div>
     <div class="btns" style="margin-top:8px"><button class="btn ghost sm" id="mExportTxt">Copiar loadouts em texto</button></div>
@@ -1625,13 +1861,15 @@ function openMenu(){
     <div class="label" style="margin-top:16px">Legal</div>
     <div class="btns" style="margin-bottom:8px"><button class="btn ghost sm" id="mPriv">Política de privacidade</button><button class="btn ghost sm" id="mTerms">Termos de uso</button></div>
     <div class="label" style="margin-top:16px">Sobre</div>
-    <p style="font-size:13px;line-height:1.55"><b>FORJA X v4.2</b>: montador de loadouts pro Delta Force Mobile.</p>
-    <div class="btns" style="margin:8px 0"><button class="btn ghost sm" id="mNews">Ver novidades</button></div>
+    <button class="profcard card" id="mAbout" style="width:100%;text-align:left;color:var(--txt);cursor:pointer"><div class="avatar">AA</div><div style="flex:1"><h3>FORJA X v${FX_VER}</h3><div class="note">Criado por <b style="color:var(--acc2)">${FX_CREATOR}</b> · ${FX_CONTACT}</div></div></button>
+    <div class="btns" style="margin:8px 0"><button class="btn ghost sm" id="mNews">Ver novidades</button><button class="btn ghost sm" id="mProf">👤 Meu perfil</button></div>
     <div class="label" style="margin-top:10px">Fontes dos dados</div>
     <ul class="chlog">
+      <li><b>Criação e desenvolvimento</b>: Alex Almeida (alequin601@gmail.com)</li>
       <li><b>Armeiro do jogo</b>: fotos das 69 armas, atributos de ${W.filter(w=>w.real).length} armas e alguns preços (vídeo enviado por você)</li>
       <li><b>CODMunity</b>: tier list por modo, taxa de uso, builds oficiais com nomes do Armeiro e duplas recomendadas (atualizado em 26/09/2025)</li>
       <li><b>deltaforcetools.gg</b>: códigos mais copiados e contagem de cópias</li>
+      <li><b>gamingonphone.com</b>: nomes das opções e valores base de sensibilidade</li>
       <li><b>topuplive.com</b>: munições por calibre, preço por bala e tabela de penetração</li>
       <li><b>GameWith, BlueStacks, timesaver.gg</b>: mapas, kits de ticket e armas recomendadas pra extração</li>
       <li><b>deltaforcetools.gg, CODMunity e guias</b>: códigos de loadout públicos</li>
@@ -1642,6 +1880,7 @@ function openMenu(){
     <p class="note" style="margin-top:12px">Projeto de fã, sem afiliação com a Garena nem com os desenvolvedores do Delta Force. Nomes e imagens das armas pertencem aos seus donos.</p>`);
   $("#shBody").onclick=e=>{
     const t=e.target.closest("button");if(!t)return;
+    if(t.id==="mAbout"){closeSheet();openAbout();return}
     if(t.classList.contains("sw")){applyTheme(t.dataset.t);return}
     if(t.id==="swReduce"){const v=!lsGet("fx-reduce",false);lsSet("fx-reduce",v);document.documentElement.classList.toggle("reduce",v);t.classList.toggle("on",v);t.setAttribute("aria-checked",v);return}
     if(t.id==="mBackup"){const l=load();if(!l.length){toast("Nada pra fazer backup");return}copy("ARSDFALL-"+btoa(unescape(encodeURIComponent(JSON.stringify(l)))),t);return}
@@ -1649,6 +1888,10 @@ function openMenu(){
     if(t.id==="mClearRec"){lsSet(RC_KEY,[]);renderCats();toast("Recentes limpos");return}
     if(t.id==="mResetPrices"){poSave({});const g=readGear();renderGearUI();setGear(g);renderCost();toast("Preços restaurados");return}
     if(t.id==="mNews"){closeSheet();openWelcome();return}
+    if(t.id==="mLook"){closeSheet();openLook();return}
+    if(t.closest("#mAbout")||t.id==="mAbout"){closeSheet();openAbout();return}
+    if(t.id==="mProf"){closeSheet();openProfile();return}
+    if(t.id==="mFull"){closeSheet();openBackup();return}
     if(t.id==="mPriv"){openLegal("priv");return}
     if(t.id==="mInstall"){closeSheet();doInstall();return}
     if(t.id==="mTerms"){openLegal("terms");return}
@@ -1872,6 +2115,331 @@ function onRaidClick(e){
   if(e.target.closest("#raidLive")){onLiveClick(e);return}
 }
 
+// ---------- SENSIBILIDADE ----------
+const SCOPES=[["rot","Sem mira (rotação)"],["rd","Ponto vermelho / Holo"],["x2","Mira 2x"],["x3","Mira 3x"],["x4","Mira 4x"],["x5","Mira 5x"],["x6","Mira 6x"],["x7","Mira 7x"],["x8","Mira 8x"],["x9","Mira 9x"],["x10","Mira 10x"],["x11","Mira 11x"],["x12","Mira 12x"]];
+const SENS_GROUPS=[
+ {k:"turn",n:"Modo de giro",en:"Turning Mode",note:"No jogo, deixe o modo de giro em Acelerado.",f:[["lensAcc","Aceleração da lente","Lens Acceleration"],["fireAcc","Aceleração de disparo","Firing Acceleration"]]},
+ {k:"glob",n:"Sensibilidade global (toque)",en:"Global Sensitivity",f:[["totalTouch","Sensibilidade total de toque","Total Touch Sensitivity"],["touchMDV","MDV de toque","Touch MDV",0,10],["vTouch","Vertical de toque","Total Vertical Touch"],["hTouch","Horizontal de toque","Total Horizontal Touch"],["totalFire","Sensibilidade total de disparo","Total Firing Sensitivity"],["fireMDV","MDV de disparo","Touch Fire MDV",0,10],["vFire","Vertical de disparo","Total Vertical Firing"],["hFire","Horizontal de disparo","Total Horizontal Firing"]]},
+ {k:"cam",n:"Câmera por mira (toque)",en:"Camera Sensitivity",scopes:1},
+ {k:"fire",n:"Disparo por mira (toque)",en:"Firing Sensitivity",scopes:1},
+ {k:"gyro",n:"Giroscópio global",en:"Gyroscope Sensitivity",gyro:1,f:[["gyro","Sensibilidade do giroscópio","Gyroscope Sensitivity"],["gyroMDV","MDV do giroscópio","Gyroscope Touch MDV",0,10],["gyroV","Vertical do giroscópio","Gyroscope Vertical"],["gyroH","Horizontal do giroscópio","Gyroscope Horizontal"],["gyroFire","Giroscópio no disparo","Gyroscope Firing"],["gyroFireMDV","MDV do giroscópio no disparo","Gyroscope Fire MDV",0,10],["gyroVFire","Vertical no disparo","Gyro Vertical Firing"],["gyroHFire","Horizontal no disparo","Gyro Horizontal Firing"]]},
+ {k:"gcam",n:"Giroscópio câmera por mira",en:"Gyro Camera",scopes:1,gyro:1},
+ {k:"gfire",n:"Giroscópio disparo por mira",en:"Gyro Firing",scopes:1,gyro:1},
+];
+const sc=(rot,rd,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12)=>({rot,rd,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12});
+// Base: guia gamingonphone.com (valores exatos)
+const SENS_BASE={gyroMode:"sempre",turn:{lensAcc:120,fireAcc:120},
+ glob:{totalTouch:75,touchMDV:0,vTouch:105,hTouch:99,totalFire:96,fireMDV:0,vFire:94,hFire:60},
+ cam:sc(120,100,100,100,100,100,139,143,100,100,100,100,100),
+ fire:sc(120,100,100,100,100,100,100,100,100,100,100,100,100),
+ gyro:{gyro:241,gyroMDV:2,gyroV:148,gyroH:138,gyroFire:176,gyroFireMDV:1,gyroVFire:130,gyroHFire:141},
+ gcam:sc(150,140,160,176,180,195,160,100,190,100,100,100,100),
+ gfire:sc(150,140,130,130,112,100,100,100,100,100,100,100,100)};
+const clone=o=>JSON.parse(JSON.stringify(o));
+const cl=(v,a=1,b=400)=>Math.max(a,Math.min(b,Math.round(v)));
+const LONG=["x6","x7","x8","x9","x10","x11","x12"], SHORT=["rot","rd","x2"];
+function scaleG(s,g,keys,f){for(const k of keys)if(s[g][k]!=null)s[g][k]=cl(s[g][k]*f,["touchMDV","fireMDV","gyroMDV","gyroFireMDV"].includes(k)?0:1,["touchMDV","fireMDV","gyroMDV","gyroFireMDV"].includes(k)?10:400)}
+function genSensi({screen=6.5,fps=60,gyro="sempre",style="all",fingers=3,shaky=false}){
+  const s=clone(SENS_BASE);s.gyroMode=gyro;
+  const sf=Math.max(.8,Math.min(1.15,6.5/screen)), ff={30:1.05,60:1,90:.97,120:.93}[fps]||1, fg={2:1.08,3:1,4:.96,5:.94}[fingers]||1;
+  const t=sf*ff*fg;
+  scaleG(s,"glob",["totalTouch","vTouch","hTouch","totalFire","vFire","hFire"],t*(gyro==="off"?1.12:1));
+  if(style==="rusher"){scaleG(s,"cam",SHORT,1.12);scaleG(s,"fire",SHORT,1.1);scaleG(s,"cam",LONG,.95);scaleG(s,"gcam",SHORT,1.1)}
+  if(style==="sniper"){scaleG(s,"cam",["rot"],.95);scaleG(s,"cam",LONG,.9);scaleG(s,"fire",LONG,.92);scaleG(s,"gcam",LONG,.88);scaleG(s,"gfire",LONG,.9)}
+  if(style==="recoil"){scaleG(s,"glob",["vFire","totalFire"],1.12);scaleG(s,"gyro",["gyroVFire","gyroFire"],1.12);scaleG(s,"fire",["rd","x2","x3","x4"],1.08)}
+  if(gyro==="ads"){scaleG(s,"gcam",["rot"],.6)}
+  const gf=ff*(shaky?.88:1)*Math.max(.9,Math.min(1.08,sf));
+  if(gyro!=="off"){scaleG(s,"gyro",["gyro","gyroV","gyroH","gyroFire","gyroVFire","gyroHFire"],gf);if(shaky){s.gyro.gyroMDV=Math.min(10,s.gyro.gyroMDV+1);s.gyro.gyroFireMDV=Math.min(10,s.gyro.gyroFireMDV+1)}}
+  return s;
+}
+const SENS_PRESETS=[
+ {id:"base",n:"Base com giroscópio",e:"🎯",d:"Valores do guia de configurações. Giroscópio sempre ligado.",tags:["Guia","Giroscópio"],make:()=>clone(SENS_BASE)},
+ {id:"nogyro",n:"Sem giroscópio · iniciante",e:"👆",d:"Só toque. Bom pra quem está começando ou tem celular sem giroscópio.",tags:["Estimativa","Toque"],make:()=>genSensi({gyro:"off",fingers:2})},
+ {id:"rusher",n:"Rusher · curta distância",e:"⚡",d:"Giro rápido sem mira e no ponto vermelho, pra entrar em prédio e ganhar no reflexo.",tags:["Estimativa","SMG/Escopeta"],make:()=>genSensi({style:"rusher",fingers:4})},
+ {id:"recoil",n:"Controle de recuo · fuzil",e:"🧲",d:"Disparo vertical mais alto: precisa puxar menos o dedo pra segurar o recuo.",tags:["Estimativa","Fuzil"],make:()=>genSensi({style:"recoil"})},
+ {id:"sniper",n:"Sniper · precisão",e:"🔭",d:"Lunetas 6x+ mais lentas e giroscópio só ao mirar, pra mira firme de longe.",tags:["Estimativa","Sniper/DMR"],make:()=>genSensi({style:"sniper",gyro:"ads"})},
+ {id:"weak",n:"Celular fraco · 30–60 FPS",e:"📱",d:"Toque um pouco mais alto e giroscópio mais calmo pra compensar a queda de FPS.",tags:["Estimativa","Desempenho"],make:()=>genSensi({fps:30,shaky:true})},
+ {id:"tablet",n:"Tablet / tela grande",e:"📲",d:"Tela maior pede sensi de toque menor: o dedo percorre mais espaço.",tags:["Estimativa","Tablet"],make:()=>genSensi({screen:11,fingers:4})},
+];
+const SS_KEY="fx-sensis", SC_KEY="fx-sens-cur";
+let sens=lsGet(SC_KEY,null)||{name:"Base com giroscópio",preset:"base",v:clone(SENS_BASE)};
+let sensRef=clone(sens.v), sensHist=[];
+function sensSave(){lsSet(SC_KEY,sens)}
+function setSens(v,name,preset){sensHist.push(clone(sens));sens={...sens,v:clone(v),name:name||sens.name,preset:preset||null};sensRef=clone(v);sensSave();renderSensEditor();renderSensPresets()}
+function sensVal(g,k){return sens.v[g]?.[k]}
+function renderSensPresets(){
+  $("#sensPresets").innerHTML=SENS_PRESETS.map(p=>`<button class="pcard ${sens.preset===p.id?'on':''}" data-sp="${p.id}"><span class="e">${p.e}</span><b>${p.n}</b><i>${p.d}</i><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}${sens.preset===p.id?'<span class="offb">✓ Em uso</span>':''}</div></button>`).join("");
+}
+let genOpt=lsGet("fx-sens-gen",{screen:6.5,fps:60,gyro:"sempre",style:"all",fingers:3,shaky:false});
+function renderSensGen(){
+  const ch=(k,opts)=>`<div class="qopt">${opts.map(([v,n])=>`<button class="chip ${String(genOpt[k])===String(v)?'on':''}" data-go="${k}" data-gv="${v}">${n}</button>`).join("")}</div>`;
+  $("#sensGen").innerHTML=`<div class="card"><div class="label">Gerar sensi personalizada</div>
+    <div class="fl"><label>Tamanho da tela: <b style="color:var(--acc2)">${genOpt.screen}"</b></label><input type="range" id="gScreen" min="5" max="13" step=".1" value="${genOpt.screen}" style="padding:0;accent-color:var(--acc)"></div>
+    <label class="note">FPS que o jogo roda</label>${ch("fps",[[30,"30"],[60,"60"],[90,"90"],[120,"120"]])}
+    <label class="note">Giroscópio</label>${ch("gyro",[["off","Desligado"],["ads","Só mirando"],["sempre","Sempre"]])}
+    <label class="note">Estilo de jogo</label>${ch("style",[["all","Equilibrado"],["rusher","Rusher"],["recoil","Recuo (fuzil)"],["sniper","Sniper"]])}
+    <label class="note">Dedos que usa</label>${ch("fingers",[[2,"2 dedos"],[3,"3 dedos"],[4,"4 dedos"],[5,"5+ (garra)"]])}
+    <label class="note">A mira treme com o giroscópio?</label>${ch("shaky",[["false","Não"],["true","Sim"]])}
+    <button class="btn" id="gDo" style="width:100%;margin-top:4px">Gerar minha sensi</button>
+    <p class="note" style="margin-top:8px">Parte dos valores do guia e ajusta por tela, FPS, dedos e estilo. Depois refine com o Treino e o Diagnóstico.</p></div>`;
+}
+function renderSensEditor(){
+  const v=sens.v, gyroOff=v.gyroMode==="off";
+  const row=(g,k,n,en,mn=1,mx=400)=>{const val=v[g][k],chg=sensRef[g]?.[k]!==val;return `<div class="srow ${chg?'chg':''}"><label>${n}<small>${en}</small></label><input type="range" min="${mn}" max="${mx}" value="${val}" data-sg="${g}" data-sk="${k}"><input type="number" min="${mn}" max="${mx}" value="${val}" data-sg="${g}" data-sk="${k}" inputmode="numeric"></div>`};
+  const grp=G=>{const off=G.gyro&&gyroOff;
+    const rows=G.scopes?SCOPES.map(([k,n])=>row(G.k,k,n,G.en+" · "+k)).join(""):G.f.map(([k,n,en,mn,mx])=>row(G.k,k,n,en,mn??1,mx??400)).join("");
+    return `<details class="sgrp" ${G.k==="glob"||G.k==="cam"?"open":""}><summary>${G.n}${off?' <span class="tag" style="margin-left:6px">desligado</span>':""}</summary>${G.note?`<p class="note">${G.note}</p>`:""}${off?`<p class="note">Giroscópio desligado neste perfil. Ligue em "Giroscópio" acima pra editar.</p>`:rows}</details>`};
+  $("#sensEditor").innerHTML=`<div class="label">Editor completo <span style="display:flex;gap:6px"><button class="btn ghost sm" id="sUndo">↶</button><button class="btn ghost sm" id="sReset">Restaurar</button></span></div>
+    <input id="sName" value="${esc(sens.name||"")}" placeholder="Nome (ex: Sensi do João)" style="margin-bottom:8px">
+    <label class="note">Giroscópio</label><div class="qopt">${[["off","Desligado"],["ads","Só mirando"],["sempre","Sempre"]].map(([k,n])=>`<button class="chip ${v.gyroMode===k?'on':''}" data-gm="${k}">${n}</button>`).join("")}</div>
+    ${SENS_GROUPS.map(grp).join("")}
+    <div class="btns" style="margin-top:12px"><button class="btn" id="sSave">Salvar sensi</button><button class="btn ghost" id="sCopy">Copiar p/ WhatsApp</button><button class="btn ghost" id="sCard">Card p/ print</button></div>`;
+}
+const DIAGS=[
+ ["over","Mira passa do alvo","Diminui câmera e giroscópio em 10%",v=>{scaleG(v,"cam",SCOPES.map(x=>x[0]),.9);scaleG(v,"gcam",SCOPES.map(x=>x[0]),.9);scaleG(v,"glob",["totalTouch"],.92)}],
+ ["slow","Mira lenta, não acompanho","Aumenta giro sem mira e miras curtas em 10%",v=>{scaleG(v,"cam",SHORT,1.1);scaleG(v,"gcam",SHORT,1.1);scaleG(v,"glob",["totalTouch"],1.06)}],
+ ["recoilUp","Recuo sobe e não seguro","Aumenta o disparo vertical em 12%",v=>{scaleG(v,"glob",["vFire","totalFire"],1.12);scaleG(v,"gyro",["gyroVFire"],1.12);scaleG(v,"fire",["rd","x2","x3","x4"],1.06)}],
+ ["recoilDown","Puxo demais, mira desce","Diminui o disparo vertical em 10%",v=>{scaleG(v,"glob",["vFire"],.9);scaleG(v,"gyro",["gyroVFire"],.9)}],
+ ["shake","Giroscópio tremendo","Giroscópio −12% e MDV +1",v=>{scaleG(v,"gyro",["gyro","gyroV","gyroH","gyroFire","gyroVFire","gyroHFire"],.88);v.gyro.gyroMDV=Math.min(10,v.gyro.gyroMDV+1);v.gyro.gyroFireMDV=Math.min(10,v.gyro.gyroFireMDV+1)}],
+ ["long","Difícil mirar de longe","Lunetas 6x a 12x −10%",v=>{scaleG(v,"cam",LONG,.9);scaleG(v,"gcam",LONG,.9);scaleG(v,"gfire",LONG,.9)}],
+];
+function renderSensDiag(){
+  $("#sensDiag").innerHTML=`<div class="label">Diagnóstico rápido <span style="letter-spacing:0;text-transform:none">toque no problema</span></div>
+    <div class="diag">${DIAGS.map(([k,n,d])=>`<button data-dg="${k}"><b>${n}</b>${d}</button>`).join("")}</div>
+    <p class="note" style="margin-top:8px">Cada toque aplica um ajuste pequeno na sensi do editor. Teste no Modo de Treinamento e repita se precisar. Use ↶ pra voltar.</p>`;
+}
+function sensText(s){
+  const v=s.v,L=[`🎯 SENSI · ${s.name||"FORJA X"}`,`Giroscópio: ${({off:"Desligado",ads:"Só mirando",sempre:"Sempre"})[v.gyroMode]}`,`Modo de giro: Acelerado · lente ${v.turn.lensAcc} · disparo ${v.turn.fireAcc}`,""];
+  const g=v.glob;L.push(`GLOBAL (toque): total ${g.totalTouch} · V ${g.vTouch} · H ${g.hTouch} · MDV ${g.touchMDV}`,`GLOBAL (disparo): total ${g.totalFire} · V ${g.vFire} · H ${g.hFire} · MDV ${g.fireMDV}`);
+  const line=(t,o)=>`${t}: `+SCOPES.map(([k])=>`${k==="rot"?"sem mira":k==="rd"?"PV":k} ${o[k]}`).join(" · ");
+  L.push("",line("CÂMERA",v.cam),line("DISPARO",v.fire));
+  if(v.gyroMode!=="off"){const y=v.gyro;L.push("",`GIROSCÓPIO: ${y.gyro} · V ${y.gyroV} · H ${y.gyroH} · MDV ${y.gyroMDV}`,`GIRO DISPARO: ${y.gyroFire} · V ${y.gyroVFire} · H ${y.gyroHFire} · MDV ${y.gyroFireMDV}`,line("GIRO CÂMERA",v.gcam),line("GIRO DISPARO",v.gfire))}
+  if(byLine())L.push("",byLine());L.push("","Feito no app FORJA X · criado por Alex Almeida");return L.join("\n");
+}
+function sensCode(s){return "FXSENSI-"+btoa(unescape(encodeURIComponent(JSON.stringify({n:s.name,v:s.v}))))}
+function renderSensList(){
+  const list=lsGet(SS_KEY,[]);
+  $("#sensList").innerHTML=list.length?list.map(x=>`<div class="sv" data-sid="${x.id}"><div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><h3>${esc(x.name)}</h3><span class="tag">${({off:"Sem giro",ads:"Giro ao mirar",sempre:"Giro sempre"})[x.v.gyroMode]}</span></div>
+      <p>Toque ${x.v.glob.totalTouch} · disparo ${x.v.glob.totalFire} · sem mira ${x.v.cam.rot}${x.v.gyroMode!=="off"?` · giro ${x.v.gyro.gyro}`:""} · ${new Date(x.t).toLocaleDateString("pt-BR")}</p>
+      <div class="btns"><button class="btn sm" data-sa="use">Usar</button><button class="btn ghost sm" data-sa="copy">WhatsApp</button><button class="btn ghost sm" data-sa="code">Código</button><button class="btn ghost sm" data-sa="card">Card</button><button class="btn ghost sm" data-sa="del">Excluir</button></div></div>`).join("")
+    :'<div class="empty" style="padding:20px">Nenhuma sensi salva. Monte uma e toque em "Salvar sensi". Pra alunos, salve uma com o nome de cada um.</div>';
+}
+function sensCard(s){
+  const v=s.v,t=(o,ks)=>ks.map(k=>`<div><i>${k==="rot"?"Sem mira":k==="rd"?"P. vermelho":k}</i><b>${o[k]}</b></div>`).join("");
+  $("#shotCard").innerHTML=`<div class="sc"><div class="brand"><span>◆ FORJA X</span><span>Sensibilidade</span></div>
+    <h2 style="font-size:30px">${esc(s.name||"Minha sensi")}</h2>${byLine()?`<div class="bn" style="color:var(--acc2)">${esc(byLine())}</div>`:""}<div class="bn">Giroscópio: ${({off:"desligado",ads:"só mirando",sempre:"sempre"})[v.gyroMode]} · Giro acelerado ${v.turn.lensAcc}/${v.turn.fireAcc}</div>
+    <div class="label" style="margin-top:14px">Global</div><div class="specs">${[["Toque",v.glob.totalTouch],["Vert.",v.glob.vTouch],["Horiz.",v.glob.hTouch],["Disparo",v.glob.totalFire],["Disp. V",v.glob.vFire],["Disp. H",v.glob.hFire]].map(([a,b])=>`<div><i>${a}</i><b>${b}</b></div>`).join("")}</div>
+    <div class="label" style="margin-top:12px">Câmera</div><div class="specs">${t(v.cam,["rot","rd","x2","x3","x4","x6","x8"])}<div><i>9x–12x</i><b>${v.cam.x9}</b></div></div>
+    ${v.gyroMode!=="off"?`<div class="label" style="margin-top:12px">Giroscópio · ${v.gyro.gyro}</div><div class="specs">${t(v.gcam,["rot","rd","x2","x3","x4","x6","x8"])}<div><i>MDV</i><b>${v.gyro.gyroMDV}</b></div></div>`:""}
+    <div class="code">${esc(sensCode(s)).slice(0,60)}…</div></div>`;
+  $("#shot").classList.remove("hide");
+}
+// ---- treino de mira (testa a sensi sem mira / ponto vermelho) ----
+let tr=null;
+function renderSensTrain(){
+  $("#sensTrain").innerHTML=`<div class="card"><div class="label">Treino de sensi <span style="letter-spacing:0;text-transform:none">arraste pra mirar</span></div>
+    <div class="qopt">${[["rot","Sem mira"],["rd","Ponto vermelho"],["x4","Mira 4x"]].map(([k,n])=>`<button class="chip ${(tr?.scope||"rot")===k?'on':''}" data-ts="${k}">${n}</button>`).join("")}</div>
+    <div class="trainbox" id="tBox"><canvas id="tCv"></canvas><div class="trainhud"><span id="tHud1">Alvos 0/12</span><span id="tHud2"></span></div>
+      <div class="trainmsg" id="tMsg"><div><b>Toque pra começar</b><span class="note">Arraste o dedo pra levar a mira até o alvo. A velocidade usa a sensi do editor.</span></div></div></div>
+    <div id="tRes"></div></div>`;
+}
+function trainStart(){
+  const cv=$("#tCv"),box=$("#tBox"),dpr=devicePixelRatio||1,W=box.clientWidth,H=box.clientHeight;cv.width=W*dpr;cv.height=H*dpr;const cx=cv.getContext("2d");cx.scale(dpr,dpr);
+  const scope=tr?.scope||"rot";
+  const k=(sensVal("cam",scope)/100)*(sens.v.glob.totalTouch/75)*(scope==="x4"?.45:scope==="rd"?.8:1)*1.15;
+  tr={scope,k,W,H,cx,aim:{x:W/2,y:H/2},t:null,n:0,over:0,times:[],last:null,inside:false,hold:0,running:true,spawn:performance.now()};
+  const spawn=()=>{const r=scope==="x4"?11:16;let x,y;do{x=30+Math.random()*(W-60);y=40+Math.random()*(H-70)}while(Math.hypot(x-tr.aim.x,y-tr.aim.y)<90);tr.t={x,y,r};tr.spawn=performance.now();tr.inside=false;tr.hold=0};
+  spawn();$("#tMsg").style.display="none";$("#tRes").innerHTML="";
+  const draw=()=>{if(!tr||!tr.running)return;const c=tr.cx;c.clearRect(0,0,W,H);
+    c.strokeStyle="rgba(255,255,255,.05)";for(let x=0;x<W;x+=30){c.beginPath();c.moveTo(x,0);c.lineTo(x,H);c.stroke()}for(let y=0;y<H;y+=30){c.beginPath();c.moveTo(0,y);c.lineTo(W,y);c.stroke()}
+    const t=tr.t;c.fillStyle="rgba(251,113,133,.25)";c.beginPath();c.arc(t.x,t.y,t.r*2,0,7);c.fill();c.fillStyle="#fb7185";c.beginPath();c.arc(t.x,t.y,t.r,0,7);c.fill();c.fillStyle="#fff";c.beginPath();c.arc(t.x,t.y,3,0,7);c.fill();
+    const a=tr.aim;c.strokeStyle=ACC();c.lineWidth=2;c.beginPath();c.arc(a.x,a.y,9,0,7);c.moveTo(a.x-16,a.y);c.lineTo(a.x-5,a.y);c.moveTo(a.x+5,a.y);c.lineTo(a.x+16,a.y);c.moveTo(a.x,a.y-16);c.lineTo(a.x,a.y-5);c.moveTo(a.x,a.y+5);c.lineTo(a.x,a.y+16);c.stroke();
+    const d=Math.hypot(a.x-t.x,a.y-t.y),inside=d<=t.r+2;
+    if(inside){tr.hold+=16;if(tr.hold>=140){tr.times.push(performance.now()-tr.spawn);tr.n++;buzz(8);$("#tHud1").textContent=`Alvos ${tr.n}/12`;if(tr.n>=12){trainEnd();return}spawn()}}
+    else{if(tr.inside)tr.over++;tr.hold=0}
+    tr.inside=inside;$("#tHud2").textContent=`Passou do alvo: ${tr.over}`;
+    requestAnimationFrame(draw)};
+  requestAnimationFrame(draw);
+}
+function trainEnd(){
+  tr.running=false;const avg=Math.round(tr.times.reduce((a,b)=>a+b,0)/tr.times.length),opt=tr.over/12;
+  let verdict,diag=null;
+  if(opt>=.6){verdict=`Sua mira passou do alvo ${tr.over} vezes: a sensi está <b>alta</b> pra você.`;diag="over"}
+  else if(avg>1300&&opt<.25){verdict=`Você acerta, mas devagar (${(avg/1000).toFixed(2)}s por alvo): a sensi está <b>baixa</b>.`;diag="slow"}
+  else verdict=`Sensi <b>equilibrada</b>: ${(avg/1000).toFixed(2)}s por alvo e ${tr.over} passadas. Mantenha e treine no jogo.`;
+  $("#tMsg").style.display="grid";$("#tMsg").innerHTML=`<div><b>${(avg/1000).toFixed(2)}s por alvo</b><span class="note">${tr.over} vezes passou do alvo · toque pra repetir</span></div>`;
+  $("#tRes").innerHTML=`<div class="verdict ${diag?'v-mid':'v-good'}" style="margin-top:10px">${verdict}</div>${diag?`<button class="btn sm" data-dg="${diag}" style="margin-top:8px;width:100%">Aplicar ajuste sugerido</button>`:""}`;
+}
+function onSensClick(e){
+  const t=e.target;
+  const sg=t.closest("#sensSeg button");if(sg){document.querySelectorAll("#sensSeg button").forEach(x=>x.classList.toggle("on",x===sg));const p=sg.dataset.p;
+    $("#sensPresets").classList.toggle("hide",p!=="presets");$("#sensGen").classList.toggle("hide",p!=="gen");$("#sensTrain").classList.toggle("hide",p!=="train");
+    if(p==="gen")renderSensGen();if(p==="train"){tr=null;renderSensTrain()}return}
+  const sp=t.closest("[data-sp]");if(sp){const P=SENS_PRESETS.find(x=>x.id===sp.dataset.sp);setSens(P.make(),P.n,P.id);toast(`Perfil "${P.n}" aplicado`);$("#sensEditor").scrollIntoView({behavior:"smooth"});return}
+  const go_=t.closest("[data-go]");if(go_&&t.closest("#sensGen")){const k=go_.dataset.go,v=go_.dataset.gv;genOpt[k]=k==="shaky"?v==="true":(isNaN(+v)?v:+v);lsSet("fx-sens-gen",genOpt);renderSensGen();return}
+  if(t.closest("#gDo")){setSens(genSensi(genOpt),"Minha sensi gerada",null);toast("Sensi gerada!");$("#sensEditor").scrollIntoView({behavior:"smooth"});return}
+  const gm=t.closest("[data-gm]");if(gm){const v=clone(sens.v);v.gyroMode=gm.dataset.gm;sensHist.push(clone(sens));sens.v=v;sensSave();renderSensEditor();return}
+  const dg=t.closest("[data-dg]");if(dg){const D=DIAGS.find(x=>x[0]===dg.dataset.dg);sensHist.push(clone(sens));const v=clone(sens.v);D[3](v);sens.v=v;sens.preset=null;sensSave();renderSensEditor();renderSensPresets();toast(`Ajuste: ${D[1]}`);return}
+  if(t.closest("#sUndo")){if(!sensHist.length){toast("Nada pra desfazer");return}sens=sensHist.pop();sensSave();renderSensEditor();renderSensPresets();return}
+  if(t.closest("#sReset")){sensHist.push(clone(sens));sens.v=clone(sensRef);sensSave();renderSensEditor();return}
+  if(t.closest("#sSave")){const list=lsGet(SS_KEY,[]);const name=($("#sName").value||"").trim()||"Minha sensi";const ex=list.findIndex(x=>x.name===name);const item={id:ex>=0?list[ex].id:Date.now().toString(36),name,t:Date.now(),v:clone(sens.v)};
+    if(ex>=0)list[ex]=item;else list.unshift(item);lsSet(SS_KEY,list);sens.name=name;sensRef=clone(sens.v);sensSave();renderSensList();renderSensEditor();toast(ex>=0?"Sensi atualizada":"Sensi salva");return}
+  if(t.closest("#sCopy")){copy(sensText(sens),t.closest("button"));return}
+  if(t.closest("#sCard")){sensCard(sens);return}
+  const ts=t.closest("[data-ts]");if(ts){tr={scope:ts.dataset.ts};renderSensTrain();return}
+  if(t.closest("#tBox")&&(!tr||!tr.running)){trainStart();return}
+  const sa=t.closest("[data-sa]");if(sa){const id=sa.closest("[data-sid]").dataset.sid,list=lsGet(SS_KEY,[]),x=list.find(y=>y.id===id);if(!x)return;const a=sa.dataset.sa;
+    if(a==="use"){setSens(x.v,x.name,null);toast(`Usando "${x.name}"`);scrollTo({top:0,behavior:"smooth"})}
+    if(a==="copy")copy(sensText(x),sa);
+    if(a==="code")copy(sensCode(x),sa);
+    if(a==="card")sensCard(x);
+    if(a==="del"){lsSet(SS_KEY,list.filter(y=>y.id!==id));renderSensList();snack(`"${x.name}" excluída`,()=>{lsSet(SS_KEY,list);renderSensList()})}
+  }
+}
+function onSensInput(e){
+  const t=e.target;
+  if(t.id==="gScreen"){genOpt.screen=+t.value;lsSet("fx-sens-gen",genOpt);t.previousElementSibling.querySelector("b").textContent=t.value+'"';return}
+  if(t.id==="sName"){sens.name=t.value;sensSave();return}
+  const g=t.dataset.sg,k=t.dataset.sk;if(!g)return;
+  const mn=+t.min,mx=+t.max,val=Math.max(mn,Math.min(mx,Math.round(+t.value||0)));
+  sens.v[g][k]=val;sens.preset=null;sensSave();
+  const row=t.closest(".srow");row.querySelectorAll("input").forEach(i=>{if(i!==t)i.value=val});row.classList.toggle("chg",sensRef[g]?.[k]!==val);
+}
+let _sensPushed=false;
+function renderSensi(){renderSensPresets();renderSensEditor();renderSensDiag();renderSensList()}
+// treino: arrastar
+(()=>{let last=null;
+  const pt=e=>{const p=e.touches?e.touches[0]:e;return {x:p.clientX,y:p.clientY}};
+  document.addEventListener("touchstart",e=>{if(e.target.closest&&e.target.closest("#tBox")&&tr&&tr.running){last=pt(e)}},{passive:true});
+  document.addEventListener("touchmove",e=>{if(!last||!tr||!tr.running)return;e.preventDefault();const p=pt(e);tr.aim.x=Math.max(0,Math.min(tr.W,tr.aim.x+(p.x-last.x)*tr.k));tr.aim.y=Math.max(0,Math.min(tr.H,tr.aim.y+(p.y-last.y)*tr.k));last=p},{passive:false});
+  document.addEventListener("touchend",()=>{last=null});
+  document.addEventListener("mousedown",e=>{if(e.target.closest&&e.target.closest("#tBox")&&tr&&tr.running)last=pt(e)});
+  document.addEventListener("mousemove",e=>{if(!last||!tr||!tr.running)return;const p=pt(e);tr.aim.x=Math.max(0,Math.min(tr.W,tr.aim.x+(p.x-last.x)*tr.k));tr.aim.y=Math.max(0,Math.min(tr.H,tr.aim.y+(p.y-last.y)*tr.k));last=p});
+  document.addEventListener("mouseup",()=>{last=null});
+})();
+
+// ---------- MEU CELULAR ----------
+const DF_PKG="com.garena.game.df", DF_PLAY="https://play.google.com/store/apps/details?id="+DF_PKG, DF_IOS="https://apps.apple.com/app/id6670604287";
+const DEV_KEY="fx-dev-bench", BOOST_KEY="fx-boost";
+let dev=null;
+function brandOf(model,ua){
+  const m=model||"";
+  if(/iPhone/.test(ua))return "Apple";if(/iPad/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1))return "Apple";
+  const R=[[/^SM-|Galaxy|^GT-/i,"Samsung"],[/^(Redmi|POCO|Mi |MI |M2\d|2\d{3}[0-9A-Z]{3,}|Xiaomi)/i,"Xiaomi"],[/^(moto|XT\d)/i,"Motorola"],[/^RMX/i,"realme"],[/^CPH/i,"OPPO / OnePlus"],[/^(V2\d{3}|vivo|I2\d{3})/i,"vivo"],[/^(NE|LE|KB|IN|HD|GM|PH|CPH)\d{4}|OnePlus/i,"OnePlus"],[/^Pixel/i,"Google"],[/^(ASUS|I0\d{2}D|AI2\d{3})/i,"ASUS"],[/^(LM-|LG)/i,"LG"],[/^(TECNO|Infinix|itel|X6\d{2}|KI\d|CK\d)/i,"Transsion (Tecno/Infinix)"],[/^(Nokia|TA-)/i,"Nokia"],[/^(ANE|ELE|VOG|MAR|HUAWEI|JNY)/i,"Huawei"],[/^(Lenovo|TB-)/i,"Lenovo"],[/^(SO-|XQ-|Xperia)/i,"Sony"],[/^(Nothing|A06\d)/i,"Nothing"]];
+  for(const [r,b] of R)if(r.test(m))return b;return m?"Android":"Desconhecida";
+}
+function chipOf(gpu){const g=gpu||"";
+  if(/Adreno/i.test(g))return "Qualcomm Snapdragon";if(/Xclipse/i.test(g))return "Samsung Exynos";if(/Mali/i.test(g))return "MediaTek / Exynos / Tensor";
+  if(/PowerVR|IMG/i.test(g))return "MediaTek / Unisoc";if(/Apple/i.test(g))return "Apple Bionic";if(/Maleoon/i.test(g))return "Huawei Kirin";return "";}
+const BOOSTERS={"Samsung":"Game Booster (abre sozinho no jogo: toque no ícone de controle na barra)","Xiaomi":"Game Turbo (Segurança → Game Turbo, adicione o Delta Force)","Motorola":"Moto Gametime (ativa no jogo, ícone na lateral)","realme":"Espaço de Jogos / Game Space","OPPO / OnePlus":"Espaço de Jogos / Games (modo Pro Gamer)","OnePlus":"Games → Modo Pro Gamer","vivo":"Modo Ultra Jogo / Ultra Game Mode","ASUS":"Armoury Crate / Game Genie (modo X)","Apple":"Modo Jogo (liga sozinho no iOS 18+) e Foco Não Perturbe","Transsion (Tecno/Infinix)":"Game Space / XArena","Huawei":"Central de Jogos / GameCenter","Google":"Painel de jogos (Game Dashboard)","Sony":"Game Enhancer"};
+async function readDevice(){
+  const n=navigator,ua=n.userAgent,d={ua};
+  d.ios=/iPhone|iPad/.test(ua)||(/Macintosh/.test(ua)&&n.maxTouchPoints>1);d.android=/Android/.test(ua);
+  if(n.userAgentData?.getHighEntropyValues){try{const x=await n.userAgentData.getHighEntropyValues(["model","platformVersion","platform"]);d.model=x.model;d.osv=x.platformVersion;d.os=x.platform}catch(e){}}
+  if(!d.model||d.model==="K"){const m=ua.match(/Android [\d.]+; (?:[a-z]{2}-[a-z]{2}; )?([^;)]+?)(?: Build|\))/i);if(m&&m[1]!=="K")d.model=m[1].trim()}
+  if(d.ios){d.model=/iPad/.test(ua)||!/iPhone/.test(ua)?"iPad":"iPhone";const v=ua.match(/OS (\d+)[_.](\d+)/);d.os="iOS";d.osv=v?v[1]+"."+v[2]:""}
+  if(d.android&&!d.osv){const v=ua.match(/Android ([\d.]+)/);d.osv=v?v[1]:""}
+  if(!d.os)d.os=d.android?"Android":/Windows/.test(ua)?"Windows":/Mac/.test(ua)?"macOS":/Linux/.test(ua)?"Linux":"—";
+  if(d.os==="Android"&&d.osv)d.osv=d.osv.replace(/\.0\.0$/,"");
+  d.brand=brandOf(d.model,ua);
+  d.cores=n.hardwareConcurrency||null;d.ram=n.deviceMemory||null;
+  try{const c=document.createElement("canvas"),gl=c.getContext("webgl")||c.getContext("experimental-webgl");if(gl){const e=gl.getExtension("WEBGL_debug_renderer_info");d.gpu=(e?gl.getParameter(e.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER))||"";d.gpu=d.gpu.replace(/\(TM\)|ANGLE \(|\)$/g,"").replace(/, OpenGL.*$|Direct3D.*$/,"").trim();d.maxTex=gl.getParameter(gl.MAX_TEXTURE_SIZE);gl.getExtension("WEBGL_lose_context")?.loseContext()}}catch(e){}
+  d.chip=chipOf(d.gpu);
+  const dpr=devicePixelRatio||1;d.res=`${Math.round(screen.width*dpr)} × ${Math.round(screen.height*dpr)}`;d.dpr=dpr;
+  d.hz=await new Promise(r=>{let c=0,t0=0;const f=t=>{if(!t0)t0=t;c++;if(t-t0<1000)requestAnimationFrame(f);else r(Math.round(c*1000/(t-t0)))};requestAnimationFrame(f)});
+  d.hz=[30,60,90,120,144,165].reduce((a,b)=>Math.abs(b-d.hz)<Math.abs(a-d.hz)?b:a);
+  try{if(n.getBattery){const b=await n.getBattery();d.bat=Math.round(b.level*100);d.charging=b.charging}}catch(e){}
+  const cn=n.connection;if(cn){d.net=cn.type&&cn.type!=="unknown"?({wifi:"Wi-Fi",cellular:"Dados móveis",ethernet:"Cabo"})[cn.type]||cn.type:null;d.eff=cn.effectiveType;d.rtt=cn.rtt;d.down=cn.downlink;d.save=cn.saveData}
+  d.online=n.onLine;d.lang=n.language;
+  try{const s=await n.storage?.estimate();if(s)d.appUse=s.usage}catch(e){}
+  return d;
+}
+const MODELS={"SM-A045":"Galaxy A04","SM-A055":"Galaxy A05","SM-A057":"Galaxy A05s","SM-A145":"Galaxy A14","SM-A146":"Galaxy A14 5G","SM-A155":"Galaxy A15","SM-A156":"Galaxy A15 5G","SM-A165":"Galaxy A16","SM-A166":"Galaxy A16 5G","SM-A256":"Galaxy A25 5G","SM-A266":"Galaxy A26 5G","SM-A346":"Galaxy A34 5G","SM-A356":"Galaxy A35 5G","SM-A366":"Galaxy A36 5G","SM-A546":"Galaxy A54 5G","SM-A556":"Galaxy A55 5G","SM-A566":"Galaxy A56 5G","SM-A536":"Galaxy A53 5G","SM-A336":"Galaxy A33 5G","SM-A325":"Galaxy A32","SM-A135":"Galaxy A13","SM-A235":"Galaxy A23","SM-A236":"Galaxy A23 5G","SM-A525":"Galaxy A52","SM-A528":"Galaxy A52s","SM-M346":"Galaxy M34 5G","SM-M546":"Galaxy M54 5G","SM-M556":"Galaxy M55 5G","SM-M156":"Galaxy M15 5G","SM-S911":"Galaxy S23","SM-S916":"Galaxy S23+","SM-S918":"Galaxy S23 Ultra","SM-S711":"Galaxy S23 FE","SM-S921":"Galaxy S24","SM-S926":"Galaxy S24+","SM-S928":"Galaxy S24 Ultra","SM-S721":"Galaxy S24 FE","SM-S931":"Galaxy S25","SM-S936":"Galaxy S25+","SM-S938":"Galaxy S25 Ultra","SM-G991":"Galaxy S21","SM-G990":"Galaxy S21 FE","SM-S901":"Galaxy S22","SM-S908":"Galaxy S22 Ultra","SM-G780":"Galaxy S20 FE","SM-G781":"Galaxy S20 FE 5G","SM-X":"Galaxy Tab"};
+function niceModel(m){if(!m)return"";for(const k in MODELS)if(m.toUpperCase().startsWith(k))return MODELS[k];return""}
+function devName(d){const nm=niceModel(d.model);if(nm)return "Samsung "+nm;return d.brand==="Apple"?d.model:`${d.brand!=="Android"&&d.brand!=="Desconhecida"?d.brand+" ":""}${d.model||"Aparelho"}`}
+function fmtBytes(b){if(b==null)return"—";return b>1e9?(b/1e9).toFixed(1)+" GB":b>1e6?(b/1e6).toFixed(1)+" MB":Math.round(b/1e3)+" KB"}
+function renderDevice(){
+  if(!dev){$("#devHero").innerHTML='<div class="note">Lendo o aparelho…</div>';readDevice().then(d=>{dev=d;renderDevice()});return}
+  const d=dev,B=lsGet(DEV_KEY,null);
+  $("#devHero").innerHTML=`<div class="ph"></div><div style="flex:1;min-width:0"><div class="label" style="margin:0">Meu celular</div><h2>${esc(devName(d))}</h2><div class="sub">${esc(d.os)} ${esc(d.osv||"")}${d.chip?" · "+esc(d.chip):""}</div>${B?`<div style="margin-top:8px"><span class="tag">Nota ${B.score}</span><span class="tag">${B.tier}</span></div>`:""}</div>`;
+  const ram=d.ram?(d.ram>=8?"8 GB ou mais":"≈ "+d.ram+" GB"):"Não informado";
+  const S=[["🏷️","Marca",d.brand],["📱","Modelo",niceModel(d.model)?`${niceModel(d.model)} (${d.model})`:(d.model||"—")],["⚙️","Sistema",`${d.os} ${d.osv||""}`],["🧠","Processador (CPU)",d.cores?`${d.cores} núcleos${d.chip?" · "+d.chip:""}`:"Não informado"],["🎮","Placa de vídeo (GPU)",d.gpu||"Não informado"],["💾","Memória RAM",ram],["🖥️","Tela",`${d.res} · ${d.hz} Hz`],["🔋","Bateria",d.bat!=null?`${d.bat}%${d.charging?" · carregando":""}`:"Não informado"],["📶","Internet",d.online?[d.net,d.eff?d.eff.toUpperCase():null,d.rtt!=null?`~${d.rtt} ms`:null,d.down?`${d.down} Mb/s`:null].filter(Boolean).join(" · ")||"Conectado":"Sem internet"],["🌡️","Temperatura",B?.heat!=null?(B.heat>=15?`Esquentando (−${B.heat}%)`:`Estável (−${Math.max(0,B.heat)}%)`):"Faça o teste de aquecimento"],["📦","FORJA X usa",fmtBytes(d.appUse)]];
+  $("#devSpecs").innerHTML=`<div class="label">Ficha do aparelho <button class="btn ghost sm" id="dvCopy">Copiar</button></div>${S.map(([i,a,b])=>`<div class="spec"><div class="ic">${i}</div><span>${a}</span><b>${esc(String(b))}</b></div>`).join("")}`;
+  renderBench();renderBoost();
+}
+function renderBench(){
+  const B=lsGet(DEV_KEY,null),d=dev;
+  const rec=B?GFX[B.tier]:null;
+  $("#devBench").innerHTML=`<div class="label">Teste de desempenho</div>
+   ${B?`<div style="display:flex;align-items:center;gap:16px"><div class="score">${B.score}</div><div style="flex:1"><b style="font:700 18px 'Chakra Petch',system-ui,sans-serif">Nível ${B.tier}</b><div class="note">CPU ${B.cpu} · Gráfico ${B.gfx} · ${new Date(B.t).toLocaleDateString("pt-BR")}</div><div class="meter"><i style="width:${B.score}%"></i></div></div></div>
+   <div class="verdict v-good"><b>Gráfico recomendado no Delta Force:</b><br>${rec.map(x=>"• "+x).join("<br>")}${d&&d.hz>=90&&B.score>=60?`<br>• Sua tela tem ${d.hz} Hz: dá pra usar ${Math.min(d.hz,120)} FPS se o jogo liberar no seu aparelho`:""}</div>
+   ${B.heat!=null?`<div class="verdict ${B.heat>=15?'v-bad':B.heat>=7?'v-mid':'v-good'}"><b>Aquecimento:</b> o desempenho caiu ${Math.max(0,B.heat)}% durante o teste. ${B.heat>=15?"O celular está esquentando e segurando a velocidade: deixe esfriar, tire a capinha e evite jogar carregando.":B.heat>=7?"Leve queda: normal em partidas longas.":"Ótimo, ele aguenta bem o esforço."}</div>`:""}
+   <div class="btns" style="margin-top:10px"><button class="btn sm" data-sp2="${B.tier==="Baixo"?"weak":"base"}">Aplicar sensi ${B.tier==="Baixo"?"pra celular fraco":"base"}</button><button class="btn ghost sm" id="dvGenFps">Usar ${B.fps} FPS no gerador</button></div>`
+   :`<p class="note">Em uns 10 segundos o FORJA X mede o processador, o gráfico e se o celular esquenta. No fim ele diz a configuração gráfica ideal pro Delta Force.</p>`}
+   <button class="btn ${B?'ghost':''}" id="dvBench" style="width:100%;margin-top:10px">${B?"Refazer teste":"Iniciar teste"}</button>`;
+}
+const GFX={
+ "Baixo":["Qualidade gráfica: a mais baixa (Suave)","Taxa de quadros: 30 a 60 FPS (prefira FPS estável)","Sombras, anti-serrilhado e efeitos: desligados","Feche tudo antes de jogar e use o modo de jogo do celular"],
+ "Médio":["Qualidade gráfica: baixa ou média","Taxa de quadros: 60 FPS","Sombras baixas, anti-serrilhado desligado","Priorize FPS em vez de gráfico bonito"],
+ "Alto":["Qualidade gráfica: média ou alta","Taxa de quadros: 60 a 90 FPS","Sombras médias, anti-serrilhado ligado","Se esquentar, baixe um nível do gráfico e mantenha o FPS"],
+ "Ultra":["Qualidade gráfica: alta","Taxa de quadros: a mais alta liberada (90 a 120 FPS)","Sombras e efeitos à vontade","Em sessões longas, monitore o aquecimento"]};
+function cpuChunk(ms){const t0=performance.now();let n=0,x=0;while(performance.now()-t0<ms){for(let i=1;i<6000;i++)x+=Math.sqrt(i)*Math.sin(i)/i;n++}return n/ms*1000+(x>1e99?1:0)}
+function gfxTest(ms){return new Promise(r=>{const c=document.createElement("canvas");c.width=720;c.height=720;c.style.cssText="position:fixed;left:-9999px;top:0";document.body.appendChild(c);const g=c.getContext("2d");const P=[...Array(2200)].map(()=>[Math.random()*720,Math.random()*720,Math.random()*2-1,Math.random()*2-1,Math.random()*360]);let fr=0,t0=0;
+  const f=t=>{if(!t0)t0=t;g.fillStyle="#0b0812";g.fillRect(0,0,720,720);for(const p of P){p[0]=(p[0]+p[2]+720)%720;p[1]=(p[1]+p[3]+720)%720;g.fillStyle=`hsla(${p[4]},80%,60%,.6)`;g.beginPath();g.arc(p[0],p[1],5,0,6.3);g.fill()}fr++;if(t-t0<ms)requestAnimationFrame(f);else{c.remove();r(fr*1000/(t-t0))}};requestAnimationFrame(f)})}
+async function runBench(){
+  const ov=document.createElement("div");ov.className="boostov";ov.innerHTML='<div><div class="ring"></div><b style="font:700 20px \'Chakra Petch\',system-ui,sans-serif" id="bStep">Preparando…</b><div class="note" id="bSub" style="margin-top:6px">Não saia da tela</div><div class="meter" style="width:220px;margin:14px auto 0"><i id="bBar" style="width:0"></i></div></div>';document.body.appendChild(ov);
+  const step=(a,b,p)=>{$("#bStep").textContent=a;$("#bSub").textContent=b;$("#bBar").style.width=p+"%"};
+  const wait=ms=>new Promise(r=>setTimeout(r,ms));
+  step("Testando gráfico","desenhando 2.200 objetos",5);await wait(250);const fps=await gfxTest(2500);
+  const rounds=[];for(let i=0;i<6;i++){step("Testando processador e aquecimento",`rodada ${i+1} de 6`,30+i*11);await wait(120);rounds.push(cpuChunk(1100))}
+  const first=(rounds[0]+rounds[1])/2,last=(rounds[4]+rounds[5])/2,cpuOps=Math.max(...rounds);
+  const heat=Math.round((1-last/first)*100);
+  const hz=dev?.hz||60,cores=dev?.cores||4,ram=dev?.ram||4;
+  const cpu=Math.round(Math.min(100,cpuOps/CPU_REF*100)), gfx=Math.round(Math.min(100,fps/Math.min(hz,60)*100*.85+Math.min(15,(fps-60)/4)));
+  const score=Math.round(Math.max(1,Math.min(100,cpu*.45+Math.max(0,gfx)*.35+Math.min(100,ram/8*100)*.1+Math.min(100,cores/8*100)*.1)));
+  const tier=score<40?"Baixo":score<60?"Médio":score<80?"Alto":"Ultra";
+  const fpsRec=tier==="Baixo"?30:tier==="Médio"?60:tier==="Alto"?(hz>=90?90:60):(hz>=120?120:hz>=90?90:60);
+  lsSet(DEV_KEY,{score,tier,cpu,gfx:Math.max(0,Math.min(100,gfx)),fps:fpsRec,heat,t:Date.now(),raw:{cpuOps:Math.round(cpuOps),gfxFps:Math.round(fps)}});
+  step("Pronto!",`Nota ${score} · nível ${tier}`,100);buzz(20);await wait(700);ov.remove();renderDevice();$("#devBench").scrollIntoView({behavior:"smooth"});
+}
+const CPU_REF=5500;
+function boostItems(){
+  const d=dev||{},b=BOOSTERS[d.brand];
+  return [
+   ["bat",d.bat==null?null:(d.bat>=30||d.charging),"Bateria",d.bat==null?"Confira se tem mais de 30%":d.bat>=30?`${d.bat}%: ok pra jogar`:`${d.bat}%: pouca bateria, o celular pode reduzir o desempenho`],
+   ["net",d.online===false?false:d.save?false:d.rtt!=null?d.rtt<=150:null,"Internet",d.online===false?"Você está sem internet":d.save?"Economia de dados ligada: desligue antes de jogar":d.rtt!=null?`Ping estimado ~${d.rtt} ms${d.rtt>150?": prefira Wi-Fi":""}`:"Prefira Wi-Fi 5 GHz perto do roteador"],
+   ["apps",null,"Feche os apps em segundo plano","Abra os recentes e toque em “Fechar tudo”: libera RAM pro jogo"],
+   ["eco",null,"Desligue o modo economia de bateria","Ele derruba o FPS do jogo"],
+   ["dnd",null,"Ative o Não perturbe","Nada de notificação no meio da troca de tiro"],
+   ["booster",null,b?`Modo jogo: ${b.split(" (")[0]}`:"Ative o modo jogo do celular",b||"Procure por Modo jogo, Game Booster ou Game Space nas configurações"],
+   ["heat",(lsGet(DEV_KEY,null)?.heat??null)===null?null:lsGet(DEV_KEY,null).heat<15,"Celular frio","Tire a capinha se esquentar e evite jogar carregando"],
+  ];
+}
+function renderBoost(){
+  const done=lsGet(BOOST_KEY,{}),items=boostItems();
+  const ok=items.filter(([k,a])=>a===true||(a===null&&done[k])).length;
+  const href=dev?.ios?DF_IOS:dev?.android?`intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${DF_PKG};S.browser_fallback_url=${encodeURIComponent(DF_PLAY)};end`:DF_PLAY;
+  $("#devBoost").innerHTML=`<div class="label">Otimizar e jogar <span style="letter-spacing:0;text-transform:none">${ok}/${items.length} prontos</span></div>
+   <div class="meter" style="margin:0 0 8px"><i style="width:${ok/items.length*100}%"></i></div>
+   ${items.map(([k,a,t,s])=>{const st=a===true||(a===null&&done[k])?"ok":a===false?"warn":"";return `<button class="chk ${st}" data-bk="${k}" ${a!==null?'data-auto="1"':''}><span class="bx">${st==="ok"?"✓":st==="warn"?"!":""}</span><span>${esc(t)}<small>${esc(s)}${a!==null?" · verificado pelo app":""}</small></span></button>`}).join("")}
+   <a class="playbtn" id="dvPlay" href="${href}" target="_top" rel="noopener">🚀 Otimizar e abrir o Delta Force</a>
+   <p class="note" style="margin-top:8px">${dev?.ios?"No iPhone, o botão abre a página do jogo na App Store, onde você toca em Abrir.":"Abre o Garena Delta Force direto. Se não estiver instalado, vai pra Play Store."}</p>`;
+}
+function onDevClick(e){
+  const t=e.target;
+  if(t.closest("#dvBench")){runBench();return}
+  if(t.closest("#dvCopy")){const d=dev,B=lsGet(DEV_KEY,null);copy([`📱 ${devName(d)}`,`Sistema: ${d.os} ${d.osv||""}`,`CPU: ${d.cores||"?"} núcleos${d.chip?" · "+d.chip:""}`,`GPU: ${d.gpu||"?"}`,`RAM: ${d.ram?(d.ram>=8?"8 GB+":"≈"+d.ram+" GB"):"?"}`,`Tela: ${d.res} · ${d.hz} Hz`,B?`Nota FORJA X: ${B.score} (${B.tier})`:"","Feito no app FORJA X · criado por Alex Almeida"].filter(Boolean).join("\n"),t.closest("button"));return}
+  const sp=t.closest("[data-sp2]");if(sp){const P=SENS_PRESETS.find(x=>x.id===sp.dataset.sp2);setSens(P.make(),P.n,P.id);toast(`Sensi "${P.n}" aplicada`);return}
+  if(t.closest("#dvGenFps")){const B=lsGet(DEV_KEY,null);genOpt.fps=[30,60,90,120].includes(B.fps)?B.fps:60;lsSet("fx-sens-gen",genOpt);go("sensi");setTimeout(()=>$("#sensSeg [data-p=gen]").click(),60);toast(`Gerador ajustado pra ${genOpt.fps} FPS`);return}
+  const bk=t.closest("[data-bk]");if(bk&&!bk.dataset.auto){const d=lsGet(BOOST_KEY,{});d[bk.dataset.bk]=!d[bk.dataset.bk];lsSet(BOOST_KEY,d);buzz();renderBoost();return}
+  const pl=t.closest("#dvPlay");if(pl){
+    // "otimizar" do lado do FORJA X: para timers e animações, libera memória das telas e salva tudo
+    clearInterval(liveTimer);if(tr)tr.running=false;
+    const ov=document.createElement("div");ov.className="boostov";ov.innerHTML='<div><div class="ring"></div><b style="font:700 22px \'Chakra Petch\',system-ui,sans-serif">Abrindo o Delta Force…</b><div class="note" style="margin-top:6px">Boa incursão, operador! 🎯</div></div>';document.body.appendChild(ov);setTimeout(()=>ov.remove(),2500);
+    lsSet(BOOST_KEY,{});
+  }
+}
+
 // ---------- AO VIVO (cronômetro de incursão) ----------
 const LV_KEY="fx-live";
 function liveState(){return lsGet(LV_KEY,{start:0,paused:0,acc:0,limit:30,warned:[]})}
@@ -1968,7 +2536,9 @@ const TIPS=["Na Zona de Risco, tudo fora da Caixa Segura é perdido se você mor
 function renderHome(){
   const hr=new Date().getHours(), greet=hr<5?"Boa madrugada":hr<12?"Bom dia":hr<18?"Boa tarde":"Boa noite";
   const list=load(), squads=lsGet(SQL_KEY,[]);
-  $("#hello").innerHTML=`<small>${new Date().toLocaleDateString("pt-BR",{weekday:"long",day:"numeric",month:"long"})}</small><h2>${greet}, <span>operador</span></h2>`;
+  $("#hello").innerHTML=`<small>${new Date().toLocaleDateString("pt-BR",{weekday:"long",day:"numeric",month:"long"})}</small><h2>${greet}, <span>${esc(prof().nick||"operador")}</span></h2>`;
+  renderProfCard();
+  $("#hCredit").innerHTML=`FORJA X v${FX_VER} · criado por <b>${FX_CREATOR}</b> · ${FX_CONTACT}`;
   // desafio
   const dc=dailyChallenge(), dw=WID[dc.w];
   $("#hDaily").innerHTML=`<img loading="lazy" decoding="async" class="bgimg" src="${IMG(dc.w)}" alt=""><div class="in"><span class="pill">🔥 Desafio do dia</span>
@@ -1991,8 +2561,13 @@ function renderHome(){
    $("#hLive").innerHTML=run?`<div class="installcard"><span class="e">🔴</span><div style="flex:1"><b style="font:700 16px 'Chakra Petch',system-ui,sans-serif">Incursão em andamento</b><div class="note">${(MAPS.find(m=>m.id===s.map)||MAPS[0]).n} · ${mmss(liveElapsed(s))} em campo${s.paused?" (pausada)":""}</div></div><button class="btn sm" data-q="live">Abrir</button></div>`
      :inst?`<div class="installcard"><span class="e">📲</span><div style="flex:1"><b style="font:700 16px 'Chakra Petch',system-ui,sans-serif">Instale a FORJA X</b><div class="note">Ícone na tela inicial, tela cheia e funciona sem internet.</div></div><button class="btn sm" data-q="install">Instalar</button></div>`:"";
    $("#hLive").classList.toggle("hide",!run&&!inst);}
+  // celular
+  {const B=lsGet(DEV_KEY,null);const paint=d=>{$("#hDev").innerHTML=`<div class="installcard"><span class="e">📱</span><div style="flex:1;min-width:0"><b style="font:700 16px 'Chakra Petch',system-ui,sans-serif">${esc(devName(d))}</b><div class="note">${d.cores?d.cores+" núcleos · ":""}${d.ram?(d.ram>=8?"8 GB+ RAM":"≈"+d.ram+" GB RAM")+" · ":""}${B?"nota "+B.score+" ("+B.tier+")":"toque pra testar"}</div></div><button class="btn sm" data-q="device">Ver</button></div><a class="playbtn" data-q="boost" href="#" style="margin-top:10px;padding:12px;font-size:15px">🚀 Otimizar e jogar</a>`};
+   if(dev)paint(dev);else{$("#hDev").innerHTML='<div class="note">Lendo o celular…</div>';readDevice().then(d=>{dev=d;if(curView==="home")paint(d)})}}
+  // sensi
+  $("#hSens").innerHTML=`<div class="installcard"><span class="e">🎯</span><div style="flex:1"><b style="font:700 16px 'Chakra Petch',system-ui,sans-serif">Sensi: ${esc(sens.name||"Base")}</b><div class="note">Toque ${sens.v.glob.totalTouch} · sem mira ${sens.v.cam.rot} · ${({off:"sem giroscópio",ads:"giroscópio ao mirar",sempre:"giroscópio sempre"})[sens.v.gyroMode]}</div></div><button class="btn sm" data-q="sensi">Ajustar</button></div>`;
   // atalhos
-  const Q=[["🔴","Incursão ao vivo","live"],["🗺️","Planejar incursão","raid"],["📒","Diário","diario"],["🔫","Munição","ammo"],["💰","Preços","price"],["⚔️","Comparar","cmp"],["🎲","Roleta","roleta"],["✅","Builds oficiais","oficiais"],["👥","Esquadrão","squad"],["🔎","Buscar","buscar"]];
+  const Q=[["🎯","Sensi","sensi"],["🧪","Treino de mira","treino"],["🔴","Incursão ao vivo","live"],["🗺️","Planejar incursão","raid"],["📒","Diário","diario"],["🔫","Munição","ammo"],["💰","Preços","price"],["⚔️","Comparar","cmp"],["🎲","Roleta","roleta"],["✅","Builds oficiais","oficiais"],["👥","Esquadrão","squad"],["🔎","Buscar","buscar"],["🔫","Munição","ammo"],["📋","Códigos","codes"],["🎨","Aparência","look"]];
   $("#hQuick").innerHTML=Q.map(([e,n,k])=>`<button class="qb" data-q="${k}"><span class="e">${e}</span>${n}</button>`).join("");
   // meta
   const order=["aug","awm","smg45","m4a1","k416","sr3m","p90","qbz951"];
@@ -2024,6 +2599,12 @@ function onHomeClick(e){
   if(k==="roleta"){go("build");setTimeout(openRoulette,150)}
   else if(k==="buscar")openSearch();
   else if(k==="install")doInstall();
+  else if(k==="device")go("device");
+  else if(k==="perfil")openProfile();
+  else if(k==="copyid")copy(prof().id,e.target.closest("[data-q]"));
+  else if(k==="boost"){e.preventDefault?.();go("device");setTimeout(()=>$("#devBoost")?.scrollIntoView({behavior:"smooth"}),400)}
+  else if(k==="treino"){go("sensi");setTimeout(()=>$("#sensSeg [data-p=train]").click(),50)}
+  else if(k==="look")openLook();
   else if(k==="live"){go("raid");setTimeout(()=>$("#raidSeg [data-p=live]").click(),50)}
   else if(k==="diario"){go("raid");setTimeout(()=>$("#raidSeg [data-p=log]").click(),50)}
   else if(k==="oficiais"){metaCat="OFF";go("meta");setTimeout(()=>$("#metaList").scrollIntoView({behavior:"smooth"}),200)}
@@ -2302,7 +2883,7 @@ function renderSaved(){
       </div></div>`}).join("");
 }
 async function copy(t,btn){
-  try{await navigator.clipboard.writeText(t);toast("Copiado! Agora é só colar no jogo");if(btn){const o=btn.textContent;btn.textContent="✓ Copiado";setTimeout(()=>btn.textContent=o,1500)}}
+  try{await navigator.clipboard.writeText(t);toast(/\n|@|^FX|^ARSDF|^https?:/.test(t)?"Copiado!":"Copiado! Agora é só colar no jogo");if(btn){const o=btn.innerHTML;btn.textContent="✓ Copiado";setTimeout(()=>{if(btn.isConnected)btn.innerHTML=o},1500)}}
   catch(e){showSheet("Copie o texto",`<p class="note" style="margin-bottom:8px">Segure no texto e escolha Copiar.</p><textarea readonly style="min-height:140px">${esc(t)}</textarea>`);setTimeout(()=>$("#shBody textarea")?.select(),250)}
 }
 
@@ -2434,6 +3015,10 @@ $("#sqList").onclick=e=>{const b=e.target.closest("[data-a]");if(!b)return;const
   if(b.dataset.a==="del"){const before=list.slice();lsSet(SQL_KEY,list.filter(x=>x.id!==id));renderSquad();snack(`Esquadrão "${q.name}" excluído`,()=>{lsSet(SQL_KEY,before);renderSquad()})}};
 $("#searchBtn").onclick=openSearch;
 $("#v-home").onclick=onHomeClick;
+$("#hCredit").addEventListener("click",e=>{e.stopPropagation();openAbout()});
+$("#v-sensi").addEventListener("click",onSensClick);
+$("#v-device").addEventListener("click",onDevClick);
+$("#v-sensi").addEventListener("input",onSensInput);
 $("#v-raid").addEventListener("click",onRaidClick);
 $("#v-raid").addEventListener("input",e=>{if(e.target.id==="evLoot"){raidLoot=+e.target.value;renderRaid()}if(e.target.id==="evSurv"){raidSurv=+e.target.value;renderRaid()}});
 $("#v-ammo").onclick=onAmmoClick;
@@ -2464,9 +3049,9 @@ document.addEventListener("keydown",e=>{
   if(e.key==="/"&&!typing){e.preventDefault();openSearch()}
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"&&!typing){e.preventDefault();e.shiftKey?redo():undo()}
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){e.preventDefault();saveLoadout(snapshot())}
-  if(!typing&&!e.ctrlKey&&!e.metaKey&&/^[1-7]$/.test(e.key)){const v=["home","build","raid","ammo","meta","codes","saved"][+e.key-1];go(v)}
+  if(!typing&&!e.ctrlKey&&!e.metaKey&&/^[1-7]$/.test(e.key)){const v=["home","build","sensi","raid","meta","saved","more"][+e.key-1];if(v==="more"){openMore();return}go(v)}
 });
-$("#wGo").onclick=()=>{$("#welcome").classList.add("hide");document.body.classList.remove("lock");lsSet("fx-v42-seen",1)};
+$("#wGo").onclick=()=>{$("#welcome").classList.add("hide");document.body.classList.remove("lock");lsSet("fx-v52-seen",1)};
 $("#wX").onclick=()=>$("#wGo").click();
 $("#wTerms").onclick=e=>{e.preventDefault();openLegal("terms")};$("#wPriv").onclick=e=>{e.preventDefault();openLegal("priv")};
 $("#wSw").onclick=e=>{const b=e.target.closest(".sw");if(b)applyTheme(b.dataset.t)};
@@ -2551,10 +3136,11 @@ $("#impBtn").onclick=()=>{
 $("#backup").onclick=e=>{const l=load();if(!l.length){toast("Nada pra fazer backup");return}
   copy("ARSDFALL-"+btoa(unescape(encodeURIComponent(JSON.stringify(l)))),e.currentTarget)};
 // ---------- ROTAS (botão voltar) ----------
-const ROUTES={home:"inicio",build:"montar",raid:"incursao",ammo:"municao",meta:"meta",codes:"codigos",price:"precos",cmp:"comparar",saved:"salvos"};
+const ROUTES={home:"inicio",build:"montar",sensi:"sensi",device:"celular",raid:"incursao",ammo:"municao",meta:"meta",codes:"codigos",price:"precos",cmp:"comparar",saved:"salvos"};
 const ROUTE_R=Object.fromEntries(Object.entries(ROUTES).map(([a,b])=>[b,a]));
 let curView="home";
 function go(v,fromHash){
+  if(v==="more"){openMore();return}
   curView=v;
   if(!fromHash){const hsh="#"+ROUTES[v];if(location.hash!==hsh){try{history.pushState(null,"",hsh)}catch(e){location.hash=hsh}}}
   _go(v);
@@ -2562,23 +3148,25 @@ function go(v,fromHash){
 window.addEventListener("hashchange",()=>{const v=ROUTE_R[location.hash.slice(1)]||"home";if(v!==curView){curView=v;_go(v)}});
 window.addEventListener("popstate",()=>{const v=ROUTE_R[location.hash.slice(1)]||"home";if(v!==curView){curView=v;_go(v)}});
 function _go(v){
-  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
-  ["home","build","raid","ammo","meta","codes","price","cmp","saved"].forEach(x=>$("#v-"+x).classList.toggle("hide",x!==v));
-  clearInterval(liveTimer); if(v==="home")renderHome(); if(v==="raid")renderRaid(); if(v==="ammo")renderAmmo(); if(v==="saved")renderSaved(); if(v==="meta")renderMeta(); if(v==="codes")renderCodes(); if(v==="cmp")renderCmpSelects(); if(v==="price")renderPrices();
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===v||(b.dataset.v==="more"&&["ammo","codes","price","cmp","device"].includes(v))));
+  ["home","build","sensi","device","raid","ammo","meta","codes","price","cmp","saved"].forEach(x=>$("#v-"+x).classList.toggle("hide",x!==v));
+  clearInterval(liveTimer); if(tr)tr.running=false; if(v==="sensi")renderSensi(); if(v==="device")renderDevice(); if(v==="home")renderHome(); if(v==="raid")renderRaid(); if(v==="ammo")renderAmmo(); if(v==="saved")renderSaved(); if(v==="meta")renderMeta(); if(v==="codes")renderCodes(); if(v==="cmp")renderCmpSelects(); if(v==="price")renderPrices();
   scrollTo({top:0});
 }
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>go(b.dataset.v));
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>b.dataset.v==="more"?openMore():go(b.dataset.v));
 
 // init
 $("#ops").innerHTML=OPS.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join("");
 $("#fSec").innerHTML=W.filter(w=>w.cat==="HG").map(w=>`<option value="${w.id}">${w.n}</option>`).join("");
 applyTheme(lsGet("fx-theme","roxo"));
+applyLook(lsGet(LOOK_KEY,{}));
+(()=>{let bar=null;const upd=()=>{if(!navigator.onLine){if(!bar){bar=document.createElement("div");bar.className="netbar";bar.textContent="Sem internet · o FORJA X continua funcionando";document.body.appendChild(bar)}}else if(bar){bar.remove();bar=null;toast("Conectado de novo")}};addEventListener("online",upd);addEventListener("offline",upd);upd()})();
 if(lsGet("fx-reduce",false))document.documentElement.classList.add("reduce");
 $("#realCount").textContent=W.filter(w=>w.real).length;
 renderGearUI();
 {const d=lsGet(DR_KEY,null);if(d&&WID[d.w]){applyLoadout(d)}else{applyLoadout({...PRESETS.find(p=>p.official&&p.w==="m4a1"&&p.mode==="Operações"),notes:""})}}
 hist=[];fut=[];updHist();
-if(!lsGet("fx-v42-seen",0))openWelcome();
+if(!lsGet("fx-v52-seen",0))openWelcome();
 renderSaved();
 {const v=ROUTE_R[location.hash.slice(1)]||"home";curView=v;_go(v)}
 window.__fxBoot=Math.round(performance.now()-window.__fxT0);
