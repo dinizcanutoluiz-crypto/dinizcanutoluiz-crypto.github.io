@@ -1,8 +1,8 @@
 [{
-      "relation": ["delegate_permission/common.handle_>
+      "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "io.github.dinizcanutoluiz_cry>
-        "sha256_cert_fingerprints": ["C5:8D:35:AE:48:5>
+        "package_name": "io.github.dinizcanutoluiz_crypto.twa",
+        "sha256_cert_fingerprints": ["EF:A9:86:B5:D8:24:AC:9F:42:C7:2D:E2:7B:E4:01:54:2C:C4:66:C3:8D:66:75:3E:8B:F9:52:C5:6B:80:ED:5A"]
       }
     }]
