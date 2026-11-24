@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_>
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.dinizcanutoluiz_cry>
+        "sha256_cert_fingerprints": ["C5:8D:35:AE:48:5>
+      }
+    }]
