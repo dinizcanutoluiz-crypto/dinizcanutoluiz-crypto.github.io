@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "io.github.dinizcanutoluiz_crypto.twa",
-        "sha256_cert_fingerprints": ["EF:A9:86:B5:D8:24:AC:9F:42:C7:2D:E2:7B:E4:01:54:2C:C4:66:C3:8D:66:75:3E:8B:F9:52:C5:6B:80:ED:5A"]
+        "sha256_cert_fingerprints": ["88:41:53:F5:5C:18:60:59:BE:B1:00:BE:8C:00:38:9D:AE:F7:84:5E:93:F2:30:3E:2C:31:B1:8D:E6:36:2F:4E"]
       }
     }]
